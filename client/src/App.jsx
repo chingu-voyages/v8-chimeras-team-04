@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Login from './Components/Login';
 
 export default function App() {
   const [data, setData] = useState();
 
   return (
     <div>
+      <Login />
       <p>Msg from react</p>
       <p>{data}</p>
       <button onClick={handleClick}>Fetch msg from backend</button>
