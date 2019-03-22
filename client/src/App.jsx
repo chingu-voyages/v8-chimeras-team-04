@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Login from './Components/Login';
 
-import Header from './components/Header';
+import Login from './Components/Login';
+import Header from './Components/Header';
 
 export default function App() {
   const [data, setData] = useState();
