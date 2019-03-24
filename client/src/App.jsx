@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import AppList from './components/AppList/AppList.jsx';
 import Header from './components/Header';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
   return (
     <div>
       <Header />
+      <AppList />
       <p>Msg from react</p>
       <p>{data}</p>
       <button onClick={handleClick}>Fetch msg from backend</button>

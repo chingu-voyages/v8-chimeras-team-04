@@ -1,0 +1,24 @@
+.app-listing {  
+    background-color: white;
+    border-left: 5px solid #3F3BFC;
+    box-shadow: 0px 3px 3px #00000025;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+}
+
+.position, .company {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.position {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3F3BFC;
+}
+
+.company {
+    font-size: 18px;
+    color: #706565;
+}

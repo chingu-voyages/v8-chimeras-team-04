@@ -1,0 +1,11 @@
+.appList-container {
+    background: #F8F6F6;
+    height: 500px;
+    padding: 20px;
+}
+
+.appList-title {
+    color: #3F3BFC;
+    text-transform: uppercase;
+    text-align: center;
+}
