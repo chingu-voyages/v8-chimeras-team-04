@@ -7,12 +7,11 @@ export default function Login() {
   return (
     <div className="login">
       <LoginForm username={username} password={password} setUsername={setUsername} setPassword={setPassword} />
-      {console.log(username, password)}
     </div>
   )
 }
 
-function LoginForm({ username, setUsername, password, setPassword }) {
+function LoginForm({ setUsername, setPassword }) {
   const [ value, setValue ] = useState("");
   const [ pw, setPw ] = useState("");
 
