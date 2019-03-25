@@ -6,39 +6,31 @@ export default function Login() {
 
   return (
     <div className="login">
-      <LoginForm username={username} password={password} setUsername={setUsername} setPassword={setPassword} />
+      <form onSubmit={handleSubmit}>
+        <label>Username: </label>
+        <input
+          type="text"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+        />
+
+        <label>Password: </label>
+        <input
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+        <button onClick={handleSubmit}>Log In</button>
+      </form>
     </div>
   )
-}
-
-function LoginForm({ setUsername, setPassword }) {
-  const [ value, setValue ] = useState("");
-  const [ pw, setPw ] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    if(value.length < 4 && pw.length < 4) return;
-    setUsername(value);
-    setPassword(pw);
-    setValue('');
-    setPw('');
+    if(username.length < 4 && password.length < 4) return;
+    axios.post('/auth', { username, password })
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
   }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>Username: </label>
-      <input 
-        type="text"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
-      <label>Password: </label>
-      <input
-        type="password"
-        value={pw}
-        onChange={e => setPw(e.target.value)}
-      />
-      <button onClick={handleSubmit}>Log In</button>
-    </form>
-  )
 }
+
