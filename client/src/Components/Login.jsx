@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function Login() {
   const [ username, setUsername ] = useState("");
@@ -25,7 +26,7 @@ export default function Login() {
     </div>
   )
 
-  const handleSubmit = e => {
+  function handleSubmit(e) {
     e.preventDefault();
     if(username.length < 4 && password.length < 4) return;
     axios.post('/auth', { username, password })
