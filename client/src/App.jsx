@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import AppList from './components/AppList/AppList.jsx';
+import Login from './components/Login';
 import Header from './components/Header';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
 
   return (
     <div>
+      <Login />
       <Header />
       <AppList />
       <p>Msg from react</p>
