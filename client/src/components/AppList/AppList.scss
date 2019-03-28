@@ -1,11 +1,13 @@
+@import './../../variables.scss';
+
 .appList-container {
-    background: #F8F6F6;
+    background-color: $grey-light;
     height: 500px;
     padding: 20px;
 }
 
 .appList-title {
-    color: #3F3BFC;
+    color: $blue-med;
     text-transform: uppercase;
     text-align: center;
 }

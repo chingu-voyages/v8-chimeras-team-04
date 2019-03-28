@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
-import './AppListing.css';
+import './AppListing.scss';
 
-export default function AppListing() {
-    const [position, setPosition] = useState('Senior Front End Developer');
-    const [company, setCompany] = useState('iHerb');
-  
+
+export default function AppListing(props) {
+    
     return (
       <div className="app-listing">
-        <h2 className="position">{position}</h2>
-        <h2 className="company">{company}</h2>
+        <h2 className="position">{props.position}</h2>
+        <h2 className="company">{props.company}</h2>
       </div>
     )
 }
