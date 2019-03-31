@@ -2,6 +2,34 @@ const express = require('express');
 
 const { authenticate } = require('./middleware/authenticate');
 
+const data = {  
+  '1': {
+    id: '1',
+    title: 'Front End Developer',
+    company: 'Gieco Insurance',
+    date: 110
+  },
+  '2': {
+    id: '2',
+    title: 'Web Developer',
+    company: 'Starco Insurance',
+    date: 30
+  },
+  '3': {
+    id: '3',
+    title: 'Front End Engineer',
+    company: 'Norco',
+    date: 80
+  },
+  '4': {
+    id: '4',
+    title: 'Front End Developer',
+    company: 'City Council',
+    date: 400
+  },
+
+}
+
 const app = express();
 
 
@@ -11,6 +39,16 @@ app.get('/chimeras', (req, res) => {
 
 app.get('/authenticateTest', authenticate, (req, res) => {
   res.send({user: req.user, token: req.token });
+});
+
+app.get('/getAllApps', (req,res) => {
+  const keys = Object.keys(data);
+  res.send(keys.map(key => data[key]));
+});
+
+app.get('/app/:id', (req, res)=> {
+  const app = data[req.params.id];
+  
 });
 
 const PORT = 5000;
