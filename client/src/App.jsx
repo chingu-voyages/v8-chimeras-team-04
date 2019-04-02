@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Login from './components/Login';
 import Header from './components/Header';
+import Signup from './components/Signup';
 
 export default function App() {
   const [data, setData] = useState();
@@ -9,6 +10,7 @@ export default function App() {
   return (
     <div>
       <Login />
+      <Signup />
       <Header />
       <p>Msg from react</p>
       <p>{data}</p>
