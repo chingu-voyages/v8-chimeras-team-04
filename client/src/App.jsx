@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Login from './components/Login';
 import Header from './components/Header';
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
 
   return (
     <div>
+      <Login />
       <Header />
       <p>Msg from react</p>
       <p>{data}</p>
