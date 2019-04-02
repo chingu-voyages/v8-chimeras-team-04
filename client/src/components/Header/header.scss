@@ -1,0 +1,27 @@
+header {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(168, 248, 215);
+  color: white;
+  height: 50px;
+  padding: 0 5px;
+  
+  .btns {
+    padding: 5px 20px;
+    font-size: 14px;
+    border: 2px solid white;
+    margin-right: 5px;
+  }
+
+  .login {
+    background: #a8f8d7;
+    color: white;
+  }
+
+  .signup {
+    color: #a8f8d7;
+    background: white;
+  }
+}
