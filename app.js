@@ -1,17 +1,15 @@
 const express = require('express');
 
-const { authenticate } = require('./middleware/authenticate');
-
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
+const router = require('./server/router');
 
-app.get('/chimeras', (req, res) => {
-  res.send({ msg: 'We are Chimeras!!! 🔥'})
-});
-
-app.get('/authenticateTest', authenticate, (req, res) => {
-  res.send({user: req.user, token: req.token });
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+router(app);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
