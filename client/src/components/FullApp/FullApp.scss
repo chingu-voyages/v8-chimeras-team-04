@@ -1,0 +1,13 @@
+@import './../../variables.scss';
+
+.app-status-list {
+    list-style-type: none;
+    color: $blue-med;
+    font-size: 14px;
+    padding-top: 15px;
+    margin-left: 15px;
+
+    li {
+        line-height: 1.75;
+    }
+}
