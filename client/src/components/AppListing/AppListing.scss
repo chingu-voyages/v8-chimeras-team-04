@@ -7,6 +7,8 @@
     padding: 15px;
     width: 100%;
     position: relative;
+    border-radius: 3px;
+    text-align: left;
 }
 
 .listing-categories-main {
@@ -32,12 +34,12 @@
     color: #706565;
 }
 
-.fa-chevron-down, .fa-chevron-up {
+.fa-plus, .fa-minus {
     color: $blue-med;
     font-size: 24px;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 12.5px;
     padding: 5px;
     border-radius: 700px;
     height: 34px;

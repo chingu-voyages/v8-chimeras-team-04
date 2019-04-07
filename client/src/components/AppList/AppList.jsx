@@ -13,6 +13,7 @@ export default function AppList() {
   return (
     <div className="appList-container">
       <h1 className="appList-title">Applications</h1>
+      <button className="appList-btn-add">+ Add App</button>
       <AppListing
         position={position}
         company={company}
