@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
 
 export default function Login() {
   const [ username, setUsername ] = useState("");
@@ -33,13 +32,8 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     if(username.length < 4 && password.length < 4) return;
-    // axios.post('/auth', { username, password })
-    //   .then(data => console.log(data))
-    //   .catch(error => console.log(error))
 
     const data = new FormData(e.target);
-    // console.log(data.get("password"));
-    // console.log(e.target)
     fetch('/api/form-submit-url', {
       method: 'POST',
       body: data,
