@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import AppList from './components/AppList/AppList.jsx';
 import Login from './components/Login';
 import Header from './components/Header';
+import Signup from './components/Signup';
 
 export default function App() {
   const [data, setData] = useState();
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <div>
       <Login />
+      <Signup />
       <Header />
       <AppList />
       <p>Msg from react</p>
