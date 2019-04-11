@@ -4,20 +4,27 @@
     background-color: white;
     border-left: 5px solid $blue-med;
     box-shadow: 0px 3px 3px #00000025;
-    display: flex;
     padding: 15px;
     width: 100%;
+    position: relative;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.listing-categories-main {
+    display: flex;
 }
 
 .position, .company {
     display: inline-block;
-    flex-grow: 1;
+    // flex-grow: 1;
 }
 
 .position {
     font-size: 24px;
     font-weight: bold;
     color: #3F3BFC;
+    width: 40%;
 }
 
 .company {
@@ -25,4 +32,27 @@
     padding: 3px 0;
     font-weight: 400;
     color: #706565;
+}
+
+.fa-plus, .fa-minus {
+    color: $blue-med;
+    font-size: 24px;
+    position: absolute;
+    right: 10px;
+    top: 12.5px;
+    padding: 5px;
+    border-radius: 700px;
+    height: 34px;
+    width: 34px;
+    
+    &:hover {
+        background-color: $blue-med;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.expand-button {
+    background-color: $white;
+    border: none;
 }

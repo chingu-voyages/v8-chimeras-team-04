@@ -13,7 +13,9 @@ export default function App() {
       <Login />
       <Signup />
       <Header />
-      <AppList />
+      <div className="full-app">
+        <AppList />
+      </div>
       <p>Msg from react</p>
       <p>{data}</p>
       <button onClick={handleClick}>Fetch msg from backend</button>
