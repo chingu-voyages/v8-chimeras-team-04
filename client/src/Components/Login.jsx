@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 export default function Login() {
   const [ username, setUsername ] = useState("");
@@ -8,20 +7,24 @@ export default function Login() {
   return (
     <div className="login">
       <form onSubmit={handleSubmit}>
-        <label>Username: </label>
+        <label htmlFor="username">Username: </label>
         <input
+          name="username"
           type="text"
           value={username}
           onChange={e => setUsername(e.target.value)}
+          required
         />
 
-        <label>Password: </label>
+        <label htmlFor="password">Password: </label>
         <input
+          name="password"
           type="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
+          required
         />
-        <button onClick={handleSubmit}>Log In</button>
+        <button>Log In</button>
       </form>
     </div>
   )
@@ -29,9 +32,27 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     if(username.length < 4 && password.length < 4) return;
-    axios.post('/auth', { username, password })
-      .then(data => console.log(data))
-      .catch(error => console.log(error))
+
+    const data = new FormData(e.target);
+    fetch('/api/form-submit-url', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if(res.status === 200) {
+        this.props.history.push('/');
+      } else {
+        const error = new Error(res.error);
+        throw error;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Error logging in. Please Try Again');
+    })
   }
 }
 
