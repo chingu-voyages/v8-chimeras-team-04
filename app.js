@@ -87,5 +87,15 @@ app.put('/editApp/:id', (req, res)=> {
   }
 });
 
+app.delete('/deleteApp/:id', (req, res) => {
+  const id = req.params.id;
+  if (data[id]) {
+    delete data[id];
+    res.send(200);
+  } else {
+    res.send(400);
+  }
+});
+
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
