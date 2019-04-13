@@ -78,7 +78,7 @@ app.put('/editApp/:id', (req, res)=> {
   const {position, company, date} = req.body;
   if (data[id]) {
     data[id] = {
-      position, company, date
+      id, position, company, date
     }
     console.log(data[id]);
     res.send(data[id]);
