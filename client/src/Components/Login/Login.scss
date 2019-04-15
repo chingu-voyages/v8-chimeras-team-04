@@ -1,0 +1,71 @@
+@import './../../variables.scss';
+
+* {
+  font-family: $font-main;
+}
+
+.login {
+  display: none;
+  z-index: 10;
+  background: $blue-med;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+
+  &-modal {
+    width: 50%;
+    background: white;
+    margin: 7em auto;
+
+    &-heading {
+      padding: 0.75em 0;
+      background: $grey-light;
+      text-align: center;
+      color: $blue-med;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+  }
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2em;
+
+  label, input {
+    margin: 0.3em auto;
+    width: 75%;
+    font-size: 1.2em;
+  }
+
+  label {
+    font-weight: 700;
+    color: $blue-med;
+  }
+  input {
+    padding: 0.1em 0.5em;
+    border: 1px solid $grey-med;
+    border-radius: 5px;
+  }
+
+  button {
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    background: $green-med;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0.5em auto 0 auto;
+    &:hover {
+      cursor: pointer;
+      background: $green-med2;
+    }
+  }
+}

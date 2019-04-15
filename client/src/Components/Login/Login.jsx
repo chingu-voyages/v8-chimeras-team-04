@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Login.scss';
 
 export default function Login() {
   const [ username, setUsername ] = useState("");
@@ -6,26 +7,31 @@ export default function Login() {
 
   return (
     <div className="login">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username: </label>
-        <input
-          name="username"
-          type="text"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          required
-        />
+      <div className="login-modal">
+        <div className="login-modal-heading">
+          <h3>Login</h3>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Username: </label>
+          <input
+            name="username"
+            type="text"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            required
+          />
 
-        <label htmlFor="password">Password: </label>
-        <input
-          name="password"
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-        />
-        <button>Log In</button>
-      </form>
+          <label htmlFor="password">Password: </label>
+          <input
+            name="password"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+          <button>Log In</button>
+        </form>
+      </div>
     </div>
   )
 

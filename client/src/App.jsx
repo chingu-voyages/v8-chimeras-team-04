@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import AppList from './components/AppList/AppList.jsx';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import Header from './components/Header';
-import Signup from './components/Signup';
+import Signup from './components/Signup/Signup';
 
 export default function App() {
   const [data, setData] = useState();
