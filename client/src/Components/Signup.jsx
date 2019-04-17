@@ -1,70 +1,66 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import './Signup.scss';
 
 export default function Signup() {
   const [ username, setUsername ] = useState("");
   const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ confirm, setConfirm ] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [isAuth, setIsAuth] = useState(false);
+  const [error, setError] = useState('');
 
+  if (isAuth) return <div style={{color: 'red', fontSize: '50px'}}>{username} signed up!</div>
   return (
     <div className="signup">
       <form onSubmit={handleSubmit}>
+        {error.length > 0 && <div style={{color: 'red'}}>{error}</div>}
         <label htmlFor="username">Name: </label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           name="username"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
-        {/* <br/> */}
         <label htmlFor="email">Email Address: </label>
-        <input 
+        <input
           type="email"
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        {/* <br/> */}
         <label htmlFor="password">Password: </label>
-        <input 
+        <input
           type="password"
           name="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        {/* <br/> */}
         <label htmlFor="confirm">Confirm Password: </label>
-        <input 
+        <input
           type="password"
           name="confirm"
-          value={confirm}
-          onChange={e => setConfirm(e.target.value)}
+          value={passwordConfirm}
+          onChange={e => setPasswordConfirm(e.target.value)}
         />
-        {/* <br/> */}
-        <button>Sign Up!</button>
+        <input type="submit" value="Sign Up!" />
       </form>
     </div>
   )
 
   function handleSubmit(e) {
     e.preventDefault();
-    if(!username || !email || !password || !confirm) {
-      alert('All Fields are Required');
-      return;
-    } else if(password !== confirm) {
-      alert('Password Not Matching');
-      return;
-    }
-    const loginData = new FormData(e.target);
 
-    // console.log(loginData.get(username));
-    // console.log(loginData.get('email'));
-    // console.log(loginData.get('confirm'));
-
-    fetch('/api/form-submit-url', {
-      method: 'POST',
-      body: loginData
-    });
+    axios.post('/signup', {username, password, passwordConfirm})
+      .then(({data}) => {
+        console.log(data)
+        if (data.error) {
+          setError(data.error)
+          setIsAuth(false);
+        } else {
+          setError('')
+          setIsAuth(true);
+        }
+      });
   }
 }
