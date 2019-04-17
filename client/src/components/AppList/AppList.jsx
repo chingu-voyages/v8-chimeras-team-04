@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import AppListing from '../AppListing/AppListing.jsx';
 import AppModal from '../AppModal/AppModal.jsx';
@@ -6,11 +6,17 @@ import AppModal from '../AppModal/AppModal.jsx';
 import './AppList.scss';
 
 export default function AppList() {
-  const [position, setPosition] = useState(`Senior Front End Developer`);
-  const [company, setCompany] = useState('iHerb');
-  const [fullView, setFullView] = useState(false);
+
+
+  const [apps, setApps] = useState([]);
+  
   const [appModal, toggleAppModal] = useState(false);
 
+  useEffect(()=> {
+    fetch('/getAllApps/')
+      .then(res => res.json())
+      .then(data => setApps(data));
+  }, [])
 
   return (
     <div className="appList-container">
@@ -18,12 +24,16 @@ export default function AppList() {
       <button 
         onClick={() => toggleAppModal(true)}
         className="appList-btn-add">+ Add App</button>
-      <AppListing
-        position={position}
-        company={company}
-        fullView={fullView}
-        setFullView={setFullView}
-      />
+        {
+          apps.map((app, index)=> (
+            <AppListing
+            index={index}
+            position={app.position}
+            company={app.company}
+            />
+          ))
+        }
+      
       <AppModal
         appModal={appModal}
         toggleAppModal={toggleAppModal}
