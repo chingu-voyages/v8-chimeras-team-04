@@ -1,17 +1,30 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
-const { authenticate } = require('./middleware/authenticate');
-
+const router = require('./server/router');
 const app = express();
 
+const mongoUri = process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
+const options = {
+  reconnectTries: 5,
+  poolSize: 10,
+  useNewUrlParser: true,
+};
 
-app.get('/chimeras', (req, res) => {
-  res.send({ msg: 'We are Chimeras!!! 🔥'})
+mongoose.connect(mongoUri, options, () => {
+  // mongoose.connection.db.dropDatabase();
 });
+mongoose.set('useCreateIndex', true)
+mongoose.set('debug', true);
 
-app.get('/authenticateTest', authenticate, (req, res) => {
-  res.send({user: req.user, token: req.token });
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
+app.use(express.static('public'));
+router(app);
 
-const PORT = 5000;
+
+const PORT = process.env.PORT || 5000;;
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
