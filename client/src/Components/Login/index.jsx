@@ -17,7 +17,13 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="username">Username: </label>
-				<input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+				<input
+					type="text"
+					name="username"
+					value={username}
+					onChange={e => setUsername(e.target.value)}
+					autoComplete={false}
+				/>
 				<label htmlFor="password">Password: </label>
 				<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
 				{login === 'signup' && <label htmlFor="confirm">Confirm Password: </label>}

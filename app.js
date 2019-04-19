@@ -7,33 +7,6 @@ const router = require('./server/router');
 const app = express();
 app.use(bodyParser.json()); //sets up bodyParser as middleware
 
-const data = {
-  '1': {
-    id: '1',
-    position: 'Front End Developer',
-    company: 'Gieco Insurance',
-    date: 110,
-  },
-  '2': {
-    id: '2',
-    position: 'Web Developer',
-    company: 'Starco Insurance',
-    date: 30,
-  },
-  '3': {
-    id: '3',
-    position: 'Front End Engineer',
-    company: 'Norco',
-    date: 80,
-  },
-  '4': {
-    id: '4',
-    position: 'Front End Developer',
-    company: 'Teh Googleh',
-    date: 400,
-  },
-};
-
 const mongoUri =
   process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
 const options = {
