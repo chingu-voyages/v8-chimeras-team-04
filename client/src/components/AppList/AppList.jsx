@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 
 import AppListing from '../AppListing/AppListing.jsx';
 import AppModal from '../AppModal/AppModal.jsx';
+import AppReducer from '../../reducers/appReducer';
 
 import './AppList.scss';
 
 export default function AppList() {
 
 
-  const [apps, setApps] = useState([]);
+  const [apps, dispatch] = useReducer(AppReducer,[]);
   
   const [appModal, toggleAppModal] = useState(false);
 
   useEffect(()=> {
-    fetch('/getAllApps/')
-      .then(res => res.json())
-      .then(data => setApps(data));
+    dispatch(apps, {type: 'FETCH_APPS'});
   }, [])
 
   return (
