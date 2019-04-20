@@ -1,17 +1,6 @@
 @import './../../variables.scss';
 
-.app-status-list {
-    list-style-type: none;
-    color: $blue-med;
-    font-size: 14px;
-    padding-left: 15px;
-    // flex-grow: 2;
-    width: 40%;
 
-    li {
-        line-height: 1.75;
-    }
-}
 
 .app-expanded {
     display: flex;

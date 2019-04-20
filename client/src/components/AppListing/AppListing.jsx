@@ -20,7 +20,7 @@ export default function AppListing(props) {
         <button
           onClick={() => setFullView(!fullView)}
           className="expand-button">
-          { fullView ? <i class="fas fa-minus"></i> : <i class="fas fa-plus"></i> }
+          { fullView ? <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i> }
           
         </button>
       </div>

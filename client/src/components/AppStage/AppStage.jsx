@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import './AppStage.scss';
 
 //for each application, want to monitor completion of that phase
 //state reflects which stages have been completed
@@ -9,7 +10,7 @@ import React, { useState } from 'react';
 
 export default function AppStage() {
 
-    const stage = [
+    const stages = [
         { name: 'Submitted', checked: true },
         { name: 'Code Challenge', checked: false },
         { name: 'Screening', checked: false },
@@ -18,24 +19,27 @@ export default function AppStage() {
         { name: 'Offer', checked: false },
     ]
 
-    const [check, toggleCheck] = useState();
+    const [check, toggleCheck] = useState(stages.checked);
 
     return (
-
-        <div>
-            <form className="app-status-list">
-                    {stage.map((status) =>
-                        <div>
-                            <input 
-                                type="checkbox" 
-                                checked={status.checked} 
-                                onClick={() => toggleCheck(!check)}>
-                            </input>
-                            <label> {status.name} </label>
-                        </div>
-                    )};
-            </form>
+        
+        <div className="app-status-list">
+            <ul>
+                {stages.map((stage, check) =>
+                    <li key={stage.name} onClick={(check) => toggleCheck(!stage.checked)}>
+                        <div className={stage.checked ? "circle stage-complete" : "circle stage"}></div>
+                        <span className="status-stage"> {stage.name} </span>
+                    </li>
+                )}
+            </ul>
         </div>
     )
 
 }
+
+
+// <input 
+//                                 type="checkbox" 
+//                                 checked={status.checked} 
+//                                 onClick={() => toggleCheck(!check)}>
+//                             </input>

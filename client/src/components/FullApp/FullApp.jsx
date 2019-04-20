@@ -9,14 +9,6 @@ export default function FullApp() {
 
     return (
         <div className="app-expanded">
-            <ul className="app-status-list">
-                <li>Submitted</li>
-                <li>Code Challenge</li>
-                <li>Screening Interview</li>
-                <li>Interview 1</li>
-                <li>Interview 2</li>
-                <li>Received Offer</li>
-            </ul>
             <AppStage />
             <div className="app-notes">
                 <h3 className="app-notes-title">Notes</h3>
@@ -25,3 +17,12 @@ export default function FullApp() {
         </div>
     )
 }
+
+// <ul className="app-status-list">
+//                 <li>Submitted</li>
+//                 <li>Code Challenge</li>
+//                 <li>Screening Interview</li>
+//                 <li>Interview 1</li>
+//                 <li>Interview 2</li>
+//                 <li>Received Offer</li>
+//             </ul>
