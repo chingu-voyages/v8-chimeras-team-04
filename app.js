@@ -1,101 +1,32 @@
 const express = require('express');
-const uuid = require('uuid');
-const moment = require('moment');
-
-const { authenticate } = require('./middleware/authenticate');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
+const router = require('./server/router');
 const app = express();
 app.use(bodyParser.json()); //sets up bodyParser as middleware
 
-const data = {  
-  '1': {
-    id: '1',
-    position: 'Front End Developer',
-    company: 'Gieco Insurance',
-    date: 110
-  },
-  '2': {
-    id: '2',
-    position: 'Web Developer',
-    company: 'Starco Insurance',
-    date: 30
-  },
-  '3': {
-    id: '3',
-    position: 'Front End Engineer',
-    company: 'Norco',
-    date: 80
-  },
-  '4': {
-    id: '4',
-    position: 'Front End Developer',
-    company: 'Teh Googleh',
-    date: 400
-  },
+const mongoUri =
+  process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
+const options = {
+  reconnectTries: 5,
+  poolSize: 10,
+  useNewUrlParser: true,
+};
 
-}
-
-
-app.get('/chimeras', (req, res) => {
-  res.send({ msg: 'We are Chimeras!!! 🔥'})
+mongoose.connect(mongoUri, options, () => {
+  console.log('database connected');
+  // mongoose.connection.db.dropDatabase();
 });
+mongoose.set('useCreateIndex', true);
+mongoose.set('debug', true);
 
-app.get('/authenticateTest', authenticate, (req, res) => {
-  res.send({user: req.user, token: req.token });
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.static('public'));
+router(app);
 
-app.get('/getAllApps', (req,res) => {
-  const keys = Object.keys(data);
-  res.send(keys.map(key => data[key]));
-});
-
-app.get('/app/:id', (req, res)=> {
-  const app = data[req.params.id];
-  if (app) {
-    res.send(app);
-  } else {
-    res.send(404);
-  }
-});
-
-app.post('/addApp', (req, res)=>{
-  const {position, company} = req.body;
-  if (position && company) {
-    const id = uuid();
-    date = moment();
-    data[id] = {
-      id, position, company, date
-    }
-    res.send(data[id]);
-  } else {
-    res.send(400);
-  }
-});
-
-app.put('/editApp/:id', (req, res)=> {
-  const id = req.params.id;
-  const {position, company, date} = req.body;
-  if (data[id]) {
-    data[id] = {
-      id, position, company, date
-    }
-    console.log(data[id]);
-    res.send(data[id]);
-  } else {
-    res.send(400);
-  }
-});
-
-app.delete('/deleteApp/:id', (req, res) => {
-  const id = req.params.id;
-  if (data[id]) {
-    delete data[id];
-    res.send(200);
-  } else {
-    res.send(400);
-  }
-});
-
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
