@@ -7,37 +7,47 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 	const [password, setPassword] = useState('');
 	const [passwordConfirm, setPasswordConfirm] = useState('');
 	const [error, setError] = useState('');
-	const [login, setLogin] = useState('signup');
+	const [login, setLogin] = useState('login');
 
 	return (
 		<div className="login">
-			<div className="login-btns">
-				{login === 'signup' && <button onClick={handleClick('login')}>Sign up</button>}
-				{login === 'login' && <button onClick={handleClick('signup')}>Log in</button>}
+
+			<div className="login-landing-page">
+				<h2>Job Application Tracker</h2>
+				<p>Keep track of your job applications by creating an account</p>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor="username">Username: </label>
-				<input
-					type="text"
-					name="username"
-					value={username}
-					onChange={e => setUsername(e.target.value)}
-					autoComplete={false}
-				/>
-				<label htmlFor="password">Password: </label>
-				<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-				{login === 'signup' && <label htmlFor="confirm">Confirm Password: </label>}
-				{login === 'signup' && (
+
+
+			<div className="login-forms">
+				<div className="login-btns">
+						<button onClick={handleClick('login')}>Log In</button>
+						<button onClick={handleClick('signup')}>Sign Up</button>
+
+				</div>
+				<form onSubmit={handleSubmit}>
+					<label htmlFor="username">Username: </label>
 					<input
-						type="password"
-						name="confirm"
-						value={passwordConfirm}
-						onChange={e => setPasswordConfirm(e.target.value)}
+						type="text"
+						name="username"
+						value={username}
+						onChange={e => setUsername(e.target.value)}
+						autoComplete={false}
 					/>
-				)}
-				<span>{error}</span>
-				<input type="submit" value="Submit" />
-			</form>
+					<label htmlFor="password">Password: </label>
+					<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+					{login === 'signup' && <label htmlFor="confirm">Confirm Password: </label>}
+					{login === 'signup' && (
+						<input
+							type="password"
+							name="confirm"
+							value={passwordConfirm}
+							onChange={e => setPasswordConfirm(e.target.value)}
+						/>
+					)}
+					<span>{error}</span>
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
 		</div>
 	);
 

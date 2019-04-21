@@ -1,28 +1,26 @@
 @import './../../variables.scss';
 
 .login {
+	height: 60vh !important;
 	background-color: $grey-light;
 	color: $blue-med;
-	text-transform: uppercase;
 	padding: 15px 0px;
 	font-size: 24px;
-	height: 15%;
+
 
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	justify-content: space-around;
+	flex-direction: row;
 	position: relative;
 
 	padding: 25px;
-
 	height: 85%;
 
 	form {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-around;
 		text-align: right;
 
 		span {
@@ -37,13 +35,14 @@
 			font-weight: 700;
 			font-size: 20px;
 			text-align: left;
+			margin-top: 1em;
 		}
 
 		input {
 			width: 100%;
 			font-size: 16px;
 			padding: 10px;
-			margin: 10px 0px 20px 0px;
+			margin: 0px 0px 20px 0px;
 			border: 1px solid $grey-med;
 			border-radius: 3px;
 			color: $grey-med;
@@ -65,7 +64,9 @@
 			padding: 10px 15px;
 			border-radius: 3px;
 			width: 150px;
-			margin: 0 auto;
+			margin: auto;
+			margin-bottom: 1em;
+			// margin-top: auto;
 
 			&:hover {
 				background-color: $green-med2;
@@ -83,15 +84,25 @@ button {
 	color: white;
 	font-weight: 700;
 	font-size: 15px;
-	// padding: 10px 15px;
-	// border-radius: 3px;
+	border: 1px solid $green-med;;
 	width: 150px;
 	margin: 0 auto;
-	border-radius: 100px;
+	padding: 1px;
+	// border-radius: 100px;
 
 	&:hover {
 		background-color: $green-med2;
 		border-color: $green-med2;
 		cursor: pointer;
+	}
+}
+
+.login-landing-page {
+	width: 60%;
+	padding: 1em;
+
+	h2 {
+		font-size: 1.75em;
+		margin: 0.5em 0;
 	}
 }
