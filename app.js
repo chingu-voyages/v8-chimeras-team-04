@@ -16,6 +16,7 @@ const options = {
 };
 
 mongoose.connect(mongoUri, options, () => {
+  console.log('database connected');
   // mongoose.connection.db.dropDatabase();
 });
 mongoose.set('useCreateIndex', true);
