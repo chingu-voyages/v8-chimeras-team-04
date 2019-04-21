@@ -22,9 +22,8 @@ const addNewJob = (req, res, next) => {
     if (saveError) {
       return next(saveError);
     }
-
-    res.json({
-      newJob,
+    JobModel.find({}).then(data => {
+      res.send(data);
     });
   });
 };

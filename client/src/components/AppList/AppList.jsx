@@ -30,7 +30,7 @@ export default function AppList() {
           <AppListing key={id} position={position} company={company} fullView={fullView} setFullView={setFullView} />
         );
       })}
-      <AppModal appModal={appModal} toggleAppModal={toggleAppModal} />
+      <AppModal setApps={setApps} appModal={appModal} toggleAppModal={toggleAppModal} />
     </div>
   );
 

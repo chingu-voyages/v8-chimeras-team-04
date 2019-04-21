@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './AppModal.scss';
 
-export default function AppModal({ toggleAppModal, appModal }) {
+export default function AppModal({ toggleAppModal, appModal, setApps }) {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
   const [jobError, setJobError] = useState('');
@@ -62,6 +62,7 @@ export default function AppModal({ toggleAppModal, appModal }) {
         toggleAppModal(false);
         setPosition('');
         setCompany('');
+        setApps(data);
       }
     });
   }
