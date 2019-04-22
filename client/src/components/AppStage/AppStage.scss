@@ -1,25 +1,36 @@
 @import './../../variables.scss';
 
 .circle {
-    border: 4px solid $grey-light-alt;
+    
     border-radius: 500px;
     height: 20px;
     width: 20px;
     display: inline-block;
     margin-right: 10px;
+    position: absolute;
+    
 }
 
-// .stage-incomplete {
-//     background-color: green;
-// }
+.stage {
+    position: relative;
+}
 
 .stage-complete {
     border: 4px solid $blue-light;
     background-color: $blue-light-alt;
+
+}
+
+.stage-incomplete {
+    border: 4px solid $grey-light-alt;
+    background-color: $white;
 }
 
 .status-stage {
     display: inline-block;
+    height: 25px;
+    margin-left: 30px;
+    
 }
 
 .app-status-list {
@@ -27,13 +38,13 @@
 
     ul {
         list-style-type: none;
-        color: $blue-med;
-        font-size: 14px;
+        color: $grey-med;
+        text-transform: uppercase;
+        font-size: 13px;
         padding-left: 15px;
     }
 
     li {
-        line-height: 1.75;
-        
+        margin: 5px 0px;
     }
 }

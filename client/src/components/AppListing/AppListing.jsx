@@ -24,10 +24,10 @@ export default function AppListing(props) {
           
         </button>
       </div>
-      {fullView ?
-        <FullApp /> :
-        ''
-      }
+      <FullApp
+        fullView={fullView}
+      />
+      
     </div>
   )
 }
