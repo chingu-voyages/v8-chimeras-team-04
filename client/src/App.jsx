@@ -11,7 +11,9 @@ export default function App() {
 	return (
 		<div>
 			<Header currentUser={currentUser} />
-			{auth ? <div className="full-app"><AppList /></div> : <Login auth={auth} setAuth={setAuth} setCurrentUser={setCurrentUser} />}
+			<div className="full-app">
+				{auth ? <AppList /> : <Login auth={auth} setAuth={setAuth} setCurrentUser={setCurrentUser} />}
+			</div>
 		</div>
 	);
 }

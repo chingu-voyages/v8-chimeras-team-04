@@ -12,8 +12,8 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 	return (
 		<div className="login">
 			<div className="login-btns">
-				{login === 'signup' && <button onClick={handleClick('login')}>Sign up</button>}
-				{login === 'login' && <button onClick={handleClick('signup')}>Log in</button>}
+				{login === 'signup' && <button className="login-btn" onClick={handleClick('login')}>Sign up</button>}
+				{login === 'login' && <button className="login-btn" onClick={handleClick('signup')}>Log in</button>}
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="username">Username: </label>
@@ -36,7 +36,7 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 					/>
 				)}
 				<span>{error}</span>
-				<input type="submit" value="Submit" />
+				<input type="submit" value="Submit" className="login-submit" />
 			</form>
 		</div>
 	);

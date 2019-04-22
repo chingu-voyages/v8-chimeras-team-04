@@ -21,7 +21,7 @@ export default function AppList() {
     <div className="appList-container">
       <h1 className="appList-title">Applications</h1>
       <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
-        + Add App
+      + Add App
       </button>
       {apps.map(app => {
         const { position, company, id } = app;
