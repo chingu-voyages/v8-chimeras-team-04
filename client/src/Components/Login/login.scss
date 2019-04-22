@@ -1,0 +1,97 @@
+@import './../../variables.scss';
+
+.login {
+	background-color: $grey-light;
+	color: $blue-med;
+	text-transform: uppercase;
+	padding: 15px 0px;
+	font-size: 24px;
+	height: 15%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+
+	padding: 25px;
+
+	height: 85%;
+
+	form {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: right;
+
+		span {
+			color: red;
+			font-size: 12px;
+			height: 25px;
+			text-align: center;
+		}
+
+		label {
+			color: $blue-med;
+			font-weight: 700;
+			font-size: 20px;
+			text-align: left;
+		}
+
+		input {
+			width: 100%;
+			font-size: 16px;
+			padding: 10px;
+			margin: 10px 0px 20px 0px;
+			border: 1px solid $grey-med;
+			border-radius: 3px;
+			color: $grey-med;
+			font-family: $font-main;
+
+			&:focus {
+				border: 1px solid $blue-med;
+				outline: none;
+			}
+		}
+
+		input[type='submit'] {
+			background-color: $green-med;
+			border: 1px solid $green-med;
+			text-transform: uppercase;
+			color: white;
+			font-weight: 700;
+			font-size: 20px;
+			padding: 10px 15px;
+			border-radius: 3px;
+			width: 150px;
+			margin: 0 auto;
+
+			&:hover {
+				background-color: $green-med2;
+				border-color: $green-med2;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+button {
+	background-color: rgb(46, 213, 243);
+	border: 1px solid rgb(46, 213, 243);
+	text-transform: uppercase;
+	color: white;
+	font-weight: 700;
+	font-size: 15px;
+	// padding: 10px 15px;
+	// border-radius: 3px;
+	width: 150px;
+	margin: 0 auto;
+	border-radius: 100px;
+
+	&:hover {
+		background-color: $green-med2;
+		border-color: $green-med2;
+		cursor: pointer;
+	}
+}

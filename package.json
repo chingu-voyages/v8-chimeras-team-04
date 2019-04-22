@@ -1,21 +1,26 @@
 {
-  "name": "job_tracker",
-  "version": "1.0.0",
-  "description": "job_tracker",
-  "main": "app.js",
-  "scripts": {
-    "server": "nodemon app.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "dependencies": {
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
-    "moment": "^2.24.0",
-    "nodemon": "^1.18.10",
-    "uuid": "^3.3.2"
-  },
-  "devDependencies": {
-    "eslint-plugin-react": "^7.12.4"
-  }
+	"name": "job_tracker",
+	"version": "1.0.0",
+	"description": "job_tracker",
+	"main": "app.js",
+	"scripts": {
+		"server": "nodemon app.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"dependencies": {
+		"bcrypt-nodejs": "0.0.3",
+		"concurrently": "^4.1.0",
+		"cors": "^2.8.5",
+		"express": "^4.16.4",
+		"jwt-simple": "^0.5.6",
+		"mongodb": "^3.2.3",
+		"mongodb-stitch-browser-sdk": "^4.3.2",
+		"mongoose": "^5.5.1",
+		"nodemon": "^1.18.10",
+		"passport": "^0.4.0",
+		"passport-jwt": "^4.0.0",
+		"passport-local": "^1.0.0",
+		"simple-crypto-js": "^2.0.2"
+	}
 }
