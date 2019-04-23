@@ -1,7 +1,8 @@
 @import './../../variables.scss';
 
 .login {
-	height: 60vh !important;
+	height: 90vh;
+	margin: 0 1rem;
 	background-color: $grey-light;
 	color: $blue-med;
 	padding: 15px 0px;
@@ -14,14 +15,20 @@
 	position: relative;
 
 	padding: 25px;
-	height: 85%;
+
+	&-forms-heading {
+		text-align: center;
+		background: $blue-med;
+		color: white;
+		padding: 0.5em 1em;
+	}
 
 	form {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		text-align: right;
+		border: 2px solid $blue-med;
+		padding: 1em;
+		width: 25rem;
+		// background: red;
+		height: 80%;
 
 		span {
 			color: red;
@@ -35,14 +42,14 @@
 			font-weight: 700;
 			font-size: 20px;
 			text-align: left;
-			margin-top: 1em;
+			margin: 1em 0 0.5em 0;
 		}
 
 		input {
+			margin: 1em 0;
 			width: 100%;
 			font-size: 16px;
 			padding: 10px;
-			margin: 0px 0px 20px 0px;
 			border: 1px solid $grey-med;
 			border-radius: 3px;
 			color: $grey-med;
@@ -64,9 +71,9 @@
 			padding: 10px 15px;
 			border-radius: 3px;
 			width: 150px;
-			margin: auto;
-			margin-bottom: 1em;
-			// margin-top: auto;
+			position: relative;
+			display: block;
+			margin-left: auto;
 
 			&:hover {
 				background-color: $green-med2;
@@ -97,12 +104,46 @@ button {
 	}
 }
 
-.login-landing-page {
-	width: 60%;
-	padding: 1em;
+.redirect {
+	border: none;
+	background: none;
+	color: $blue-med;
+	display: block;
+	width: 100%;
+	font-weight: 100;
+	text-transform: none;
+	text-align: left;
 
-	h2 {
-		font-size: 1.75em;
-		margin: 0.5em 0;
+}
+
+.login-landing-page {
+	padding: 4rem 0;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+
+	&-main {
+		width: 10em;
+		margin: 0.5em auto;
 	}
+
+	&-sub {
+		display: flex;
+		width: 70%;
+		// background: red;
+		margin: 1em auto;
+		font-size: 0.75em;
+		color: $grey-med;
+		text-align: center;
+
+		img {
+			width: 3em;
+			margin: 0 1em;
+		}
+
+		p {
+			padding: 0.5em 0;
+		}
+	}
+
 }
