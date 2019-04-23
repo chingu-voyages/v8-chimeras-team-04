@@ -8,7 +8,6 @@ import './FullApp.scss';
 export default function FullApp(props) {
 
     return (
-        
         <div className={props.fullView ?  "app-expanded" : "app-expanded-hidden" } >
             <div className="app-status-list">
                 <AppStage />
