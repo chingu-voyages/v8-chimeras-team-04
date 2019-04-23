@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Modal from 'react-modal';
 import axios from 'axios';
+import AppContext from '../../context/AppContext';
 
 import './AppModal.scss';
 
 export default function AppModal({ toggleAppModal, appModal, setApps }) {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
-  const [jobError, setJobError] = useState('');
+  const [jobError, setJobError] = useState(''); 
+  const { test } = useContext(AppContext);
 
   return (
     <div>
