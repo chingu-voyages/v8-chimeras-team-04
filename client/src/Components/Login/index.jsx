@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import ok from '../../img/ok.svg';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
 import jobHunt from '../../img/job_hunt.svg';
 import './login.scss';
 
@@ -18,22 +21,17 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 			<div className="login-landing-page">
 				<img src={jobHunt} className="login-landing-page-main" />
 				<div className="login-landing-page-sub">
-					<img src={ok} />
+					<FontAwesomeIcon className="icon" icon={faCheck} />
 					<p>Create a FREE account to easily keep track of your job applications.</p>
 				</div>
 				<div className="login-landing-page-sub">
-					<img src={ok} />
+					<FontAwesomeIcon className="icon" icon={faCheck} />
 					<p>Track your rate of success at each stage in the process to identify areas to focus to imporve success.</p>
 				</div>
 			</div>
 
 
 			<div className="login-forms">
-				{/* <div className="login-btns">
-						<button onClick={handleClick('login')}>Log In</button>
-						<button onClick={handleClick('signup')}>Sign Up</button>
-
-				</div> */}
 
 				<h2 className="login-forms-heading">
 					{
@@ -61,6 +59,8 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 							onChange={e => setPasswordConfirm(e.target.value)}
 						/>
 					)}
+					
+					<span>{error}</span>
 					{
 						login === 'login' ? 
 						<button className="redirect" onClick={handleClick('signup')}>
@@ -71,7 +71,6 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 							Already have an account? Sign in here
 						</button>
 					}
-					<span>{error}</span>
 					<br/>
 					<input type="submit" value="Submit" />
 				</form>

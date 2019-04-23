@@ -15,7 +15,10 @@
 	position: relative;
 
 	padding: 25px;
-
+	&-forms {
+		margin: auto 0;
+		height: 90vh;
+	}
 	&-forms-heading {
 		text-align: center;
 		background: $blue-med;
@@ -25,10 +28,10 @@
 
 	form {
 		border: 2px solid $blue-med;
-		padding: 1em;
+		padding: 50px;
 		width: 25rem;
-		// background: red;
 		height: 80%;
+		position: relative;
 
 		span {
 			color: red;
@@ -71,9 +74,11 @@
 			padding: 10px 15px;
 			border-radius: 3px;
 			width: 150px;
-			position: relative;
+			position: absolute;
 			display: block;
-			margin-left: auto;
+			right: 0;
+			bottom: 0;
+			margin: 2em;
 
 			&:hover {
 				background-color: $green-med2;
@@ -95,7 +100,6 @@ button {
 	width: 150px;
 	margin: 0 auto;
 	padding: 1px;
-	// border-radius: 100px;
 
 	&:hover {
 		background-color: $green-med2;
@@ -130,19 +134,20 @@ button {
 	&-sub {
 		display: flex;
 		width: 70%;
-		// background: red;
-		margin: 1em auto;
+		margin: auto;
 		font-size: 0.75em;
 		color: $grey-med;
 		text-align: center;
 
-		img {
-			width: 3em;
-			margin: 0 1em;
+		.icon {
+			color: $blue-med;
+			font-size: 2em;
+			margin: auto;
 		}
 
 		p {
-			padding: 0.5em 0;
+			padding-top: 1em;
+			padding-left: 0.5em;
 		}
 	}
 
