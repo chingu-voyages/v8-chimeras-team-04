@@ -2,10 +2,11 @@
 
 .appList-container {
     background-color: $grey-light;
-    height: 500px;
+    height: 100%;
     padding: 20px;
     text-align: right;
-    
+    overflow: auto;
+    border-radius: 3px;
 }
 
 .appList-title {
