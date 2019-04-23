@@ -3,7 +3,8 @@
 .login {
 	height: 90vh;
 	margin: 0 1rem;
-	background-color: $grey-light;
+	// background-color: $grey-light;
+	background-color: white;
 	color: $blue-med;
 	padding: 15px 0px;
 	font-size: 24px;
@@ -16,8 +17,10 @@
 
 	padding: 25px;
 	&-forms {
+		background: $grey-light;
 		margin: auto 0;
-		height: 90vh;
+		height: 80%;
+		width: 25rem;
 	}
 	&-forms-heading {
 		text-align: center;
@@ -29,8 +32,7 @@
 	form {
 		border: 2px solid $blue-med;
 		padding: 50px;
-		width: 25rem;
-		height: 80%;
+		height: 423.15px;
 		position: relative;
 
 		span {
@@ -45,11 +47,11 @@
 			font-weight: 700;
 			font-size: 20px;
 			text-align: left;
-			margin: 1em 0 0.5em 0;
+			margin: 0;
 		}
 
 		input {
-			margin: 1em 0;
+			margin-bottom: 0.5em;
 			width: 100%;
 			font-size: 16px;
 			padding: 10px;
@@ -78,7 +80,8 @@
 			display: block;
 			right: 0;
 			bottom: 0;
-			margin: 2em;
+			margin-right: 2.5em;
+			margin-bottom: 1.25em;
 
 			&:hover {
 				background-color: $green-med2;
@@ -112,6 +115,7 @@ button {
 	border: none;
 	background: none;
 	color: $blue-med;
+	font-size: 0.60em;
 	display: block;
 	width: 100%;
 	font-weight: 100;
