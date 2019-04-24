@@ -5,11 +5,11 @@ import AppContext from '../../context/AppContext';
 
 import './AppModal.scss';
 
-export default function AppModal({ toggleAppModal, appModal, setApps }) {
+export default function AppModal() {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
   const [jobError, setJobError] = useState(''); 
-  const { test } = useContext(AppContext);
+  const { toggleAppModal, appModal, setApps, test } = useContext(AppContext);
 
   return (
     <div>
