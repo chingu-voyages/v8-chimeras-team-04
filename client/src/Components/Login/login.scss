@@ -19,20 +19,22 @@
 	&-forms {
 		background: $grey-light;
 		margin: auto 0;
-		height: 80%;
+		height: 85%;
 		width: 25rem;
 	}
 	&-forms-heading {
 		text-align: center;
 		background: $blue-med;
+		height: 13%;
 		color: white;
-		padding: 0.5em 1em;
+		// padding: 0.5em 1em;
+		padding: 0.3em;
 	}
 
 	form {
 		border: 2px solid $blue-med;
 		padding: 50px;
-		height: 423.15px;
+		height: 87%;
 		position: relative;
 
 		span {
