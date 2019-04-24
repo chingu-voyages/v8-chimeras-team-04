@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import FullAppContext from '../../context/FullAppContext';
 
 import FullApp from '../FullApp/FullApp.jsx';
 import './AppListing.scss';
 
 export default function AppListing(props) {
-
   const [fullView, setFullView] = useState(false);
-
   return (
     <div className="app-listing">
       <div className="listing-categories-main">
@@ -16,7 +15,9 @@ export default function AppListing(props) {
           {fullView ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />}
         </button>
       </div>
-      {fullView ? <FullApp /> : ''}
+      <FullAppContext.Provider value={{ fullView }}>
+        <FullApp />
+      </FullAppContext.Provider>
     </div>
   );
 }

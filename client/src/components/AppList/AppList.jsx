@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getAllJobs } from '../../helpers/DBHelper';
 
 import AppContext from '../../context/AppContext';
 import AppListing from '../AppListing/AppListing.jsx';
@@ -8,8 +8,6 @@ import AppModal from '../AppModal/AppModal.jsx';
 import './AppList.scss';
 
 export default function AppList() {
-  const [position, setPosition] = useState('');
-  const [company, setCompany] = useState('');
   const [appModal, toggleAppModal] = useState(false);
   const [apps, setApps] = useState([]);
 
@@ -18,7 +16,7 @@ export default function AppList() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ toggleAppModal, appModal, setApps, test:'This is a test' }}>
+    <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
       <div className="appList-container">
         <h1 className="appList-title">Applications</h1>
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
@@ -37,6 +35,6 @@ export default function AppList() {
   );
 
   function fetchJobApps() {
-    axios.get('/jobs').then(({ data }) => setApps(data));
+    getAllJobs().then(({ data }) => setApps(data));
   }
 }

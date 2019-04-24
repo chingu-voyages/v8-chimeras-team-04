@@ -55,7 +55,7 @@
 			}
 		}
 
-		input[type='submit'] {
+		.login-submit {
 			background-color: $green-med;
 			border: 1px solid $green-med;
 			text-transform: uppercase;
@@ -67,16 +67,16 @@
 			width: 150px;
 			margin: 0 auto;
 
-			&:hover {
-				background-color: $green-med2;
-				border-color: $green-med2;
-				cursor: pointer;
-			}
+			// &:hover {
+			// 	background-color: $green-med2;
+			// 	border-color: $green-med2;
+			// 	cursor: pointer;
+			// }
 		}
 	}
 }
 
-button {
+.login-submit {
 	background-color: rgb(46, 213, 243);
 	border: 1px solid rgb(46, 213, 243);
 	text-transform: uppercase;

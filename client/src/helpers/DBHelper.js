@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const addJob = (position, company ) => {
-    return axios.post('/addjob', { position, company });
-}
+const addJob = (position, company ) => axios.post('/addjob', { position, company });
 
-export { addJob };
+const getAllJobs = () => axios.get('/jobs');
+
+export { addJob, getAllJobs };
