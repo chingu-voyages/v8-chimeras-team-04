@@ -1,5 +1,0 @@
-
-
-const AppReducer = (state, action) {
-    
-}

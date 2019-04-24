@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Modal from 'react-modal';
-import axios from 'axios';
 import AppContext from '../../context/AppContext';
+import { addJob } from '../../helpers/DBHelper';
 
 import './AppModal.scss';
 
@@ -56,7 +56,7 @@ export default function AppModal() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios.post('/addjob', { position, company }).then(({ data }) => {
+    addJob(position, company).then(({ data }) => {
       if (data.error) {
         setJobError(data.error);
       } else {
