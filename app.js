@@ -5,17 +5,19 @@ const mongoose = require('mongoose');
 
 const router = require('./server/router');
 const app = express();
+app.use(bodyParser.json()); //sets up bodyParser as middleware
 
 const mongoUri =
-	process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
+  process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
 const options = {
-	reconnectTries: 5,
-	poolSize: 10,
-	useNewUrlParser: true,
+  reconnectTries: 5,
+  poolSize: 10,
+  useNewUrlParser: true,
 };
 
 mongoose.connect(mongoUri, options, () => {
-	// mongoose.connection.db.dropDatabase();
+  console.log('database connected');
+  // mongoose.connection.db.dropDatabase();
 });
 mongoose.set('useCreateIndex', true);
 mongoose.set('debug', true);

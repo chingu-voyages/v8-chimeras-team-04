@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import jobHunt from '../../img/job_hunt.svg';
+=======
+>>>>>>> staging
 import './login.scss';
 
 export default function Login({ auth, setAuth, setCurrentUser }) {
@@ -13,6 +16,7 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 	const [password, setPassword] = useState('');
 	const [passwordConfirm, setPasswordConfirm] = useState('');
 	const [error, setError] = useState('');
+<<<<<<< HEAD
 	const [login, setLogin] = useState('login');
 
 	return (
@@ -75,6 +79,39 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 					<input type="submit" value="Submit" />
 				</form>
 			</div>
+=======
+	const [login, setLogin] = useState('signup');
+
+	return (
+		<div className="login">
+			<div className="login-btns">
+				{login === 'signup' && <button className="login-btn" onClick={handleClick('login')}>Sign up</button>}
+				{login === 'login' && <button className="login-btn" onClick={handleClick('signup')}>Log in</button>}
+			</div>
+			<form onSubmit={handleSubmit}>
+				<label htmlFor="username">Username: </label>
+				<input
+					type="text"
+					name="username"
+					value={username}
+					onChange={e => setUsername(e.target.value)}
+					autoComplete={false}
+				/>
+				<label htmlFor="password">Password: </label>
+				<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+				{login === 'signup' && <label htmlFor="confirm">Confirm Password: </label>}
+				{login === 'signup' && (
+					<input
+						type="password"
+						name="confirm"
+						value={passwordConfirm}
+						onChange={e => setPasswordConfirm(e.target.value)}
+					/>
+				)}
+				<span>{error}</span>
+				<input type="submit" value="Submit" className="login-submit" />
+			</form>
+>>>>>>> staging
 		</div>
 	);
 
