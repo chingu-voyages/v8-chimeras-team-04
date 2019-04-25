@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import AppContext from '../../context/AppContext';
 import { addJob } from '../../helpers/DBHelper';
 
-import './AppModal.scss';
+import './appmodal.scss';
 
 export default function AppModal() {
   const [position, setPosition] = useState('');

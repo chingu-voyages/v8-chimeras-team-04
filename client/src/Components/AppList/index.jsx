@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getAllJobs } from '../../helpers/DBHelper';
 
-import AppContext from '../../context/AppContext';
-import AppListing from '../AppListing/AppListing.jsx';
-import AppModal from '../AppModal/AppModal.jsx';
+import AppListing from '../AppListing';
+import AppModal from '../AppModal';
 
-import './AppList.scss';
+import './applist.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);

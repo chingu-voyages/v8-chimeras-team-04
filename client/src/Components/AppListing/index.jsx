@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import FullAppContext from '../../context/FullAppContext';
 
-import FullApp from '../FullApp/FullApp.jsx';
-import './AppListing.scss';
+import FullApp from '../FullApp';
+import './applisting.scss';
 
 export default function AppListing(props) {
   const [fullView, setFullView] = useState(false);
