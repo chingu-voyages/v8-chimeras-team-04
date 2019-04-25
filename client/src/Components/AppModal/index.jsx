@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import axios from 'axios';
 
-import './AppModal.scss';
+import './appmodal.scss';
 
 export default function AppModal({ toggleAppModal, appModal, setApps }) {
   const [position, setPosition] = useState('');

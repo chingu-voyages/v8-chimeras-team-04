@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import FullApp from '../FullApp/FullApp.jsx';
-import './AppListing.scss';
+import FullApp from '../FullApp';
+import './applisting.scss';
 
 export default function AppListing(props) {
   const [fullView, setFullView] = useState(false);
@@ -14,9 +14,7 @@ export default function AppListing(props) {
           {fullView ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />}
         </button>
       </div>
-      <FullApp
-        fullView={fullView}
-      />
+      <FullApp fullView={fullView} />
     </div>
   );
 }
