@@ -3,8 +3,9 @@ import { getAllJobs } from '../../helpers/DBHelper';
 
 import AppListing from '../AppListing';
 import AppModal from '../AppModal';
+import AppContext from '../../context/AppContext';
 
-import './applist.scss';
+import './AppList.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
