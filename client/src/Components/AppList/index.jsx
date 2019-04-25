@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getAllJobs } from '../../helpers/DBHelper';
 
 import AppListing from '../AppListing';
 import AppModal from '../AppModal';
+import AppContext from '../../context/AppContext';
 
-import './applist.scss';
+import './AppList.scss';
 
 export default function AppList() {
-  const [position, setPosition] = useState('');
-  const [company, setCompany] = useState('');
-
   const [appModal, toggleAppModal] = useState(false);
   const [apps, setApps] = useState([]);
 
@@ -18,21 +16,25 @@ export default function AppList() {
   }, []);
 
   return (
-    <div className="appList-container">
-      <h1 className="appList-title">Applications</h1>
-      <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
-        + Add App
-      </button>
-      {apps.map(app => {
-        const { position, company, id } = app;
-        console.log(app);
-        return <AppListing key={id} position={position} company={company} />;
-      })}
-      <AppModal setApps={setApps} appModal={appModal} toggleAppModal={toggleAppModal} />
-    </div>
+    <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
+      <div className="appList-container">
+        <h1 className="appList-title">Applications</h1>
+        <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
+          + Add App
+        </button>
+        {apps.map(app => {
+          const { position, company, id } = app;
+          console.log(app);
+          return (
+            <AppListing key={id} position={position} company={company} />
+          );
+        })}
+        <AppModal />
+      </div>
+    </AppContext.Provider>
   );
 
   function fetchJobApps() {
-    axios.get('/jobs').then(({ data }) => setApps(data));
+    getAllJobs().then(({ data }) => setApps(data));
   }
 }

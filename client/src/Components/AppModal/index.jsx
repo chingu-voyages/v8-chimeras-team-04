@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Modal from 'react-modal';
-import axios from 'axios';
+import AppContext from '../../context/AppContext';
+import { addJob } from '../../helpers/DBHelper';
 
-import './appmodal.scss';
+import './AppModal.scss';
 
-export default function AppModal({ toggleAppModal, appModal, setApps }) {
+export default function AppModal() {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
-  const [jobError, setJobError] = useState('');
+  const [jobError, setJobError] = useState(''); 
+  const { toggleAppModal, appModal, setApps, test } = useContext(AppContext);
 
   return (
     <div>
@@ -54,7 +56,7 @@ export default function AppModal({ toggleAppModal, appModal, setApps }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios.post('/addjob', { position, company }).then(({ data }) => {
+    addJob(position, company).then(({ data }) => {
       if (data.error) {
         setJobError(data.error);
       } else {
