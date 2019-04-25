@@ -33,11 +33,11 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 
 			<div className="login-forms">
 
-				<h2 className="login-forms-heading">
+				<h3 className="login-forms-heading">
 					{
 						login === 'login' ? "Log In" : "Sign Up"
 					}
-				</h2>
+				</h3>
 
 				<form onSubmit={handleSubmit}>
 					<label htmlFor="username">Username </label>
@@ -60,19 +60,24 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 						/>
 					)}
 					
-					<span>{error}</span>
+					<span className="error">{error}</span>
 					{
 						login === 'login' ? 
-						<button className="redirect" onClick={handleClick('signup')}>
-							Don't have an account yet? Sign up for FREE
-						</button>
+						<div className="redirect">
+							Don't have an account? Sign up
+							<span className="redirect-btn" onClick={handleClick('signup')}>
+								 <strong> here</strong>
+							</span>
+						</div>
 						:
-						<button className="redirect" onClick={handleClick('login')}>
-							Already have an account? Sign in here
-						</button>
+						<div className="redirect">Already have an account? Sign in
+							<span className="redirect-btn" onClick={handleClick('login')}>
+								<strong> here</strong>
+							</span>
+						</div>
 					}
 					<br/>
-					<input type="submit" value="Submit" />
+					<input type="submit" value="Submit" className="login-submit" />
 				</form>
 			</div>
 		</div>

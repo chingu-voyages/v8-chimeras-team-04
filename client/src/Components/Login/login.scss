@@ -1,9 +1,7 @@
 @import './../../variables.scss';
 
 .login {
-	height: 90vh;
-	margin: 0 1rem;
-	// background-color: $grey-light;
+	height: 100%;
 	background-color: white;
 	color: $blue-med;
 	padding: 15px 0px;
@@ -19,25 +17,26 @@
 	&-forms {
 		background: $grey-light;
 		margin: auto 0;
-		height: 85%;
-		width: 25rem;
+		height: 84%;
+		width: 36%;
 	}
 	&-forms-heading {
 		text-align: center;
 		background: $blue-med;
-		height: 13%;
+		height: 18%;
 		color: white;
-		// padding: 0.5em 1em;
-		padding: 0.3em;
+		text-transform: uppercase;
+		font-size: 1.75em;
+		padding: 22px;
 	}
 
 	form {
 		border: 2px solid $blue-med;
-		padding: 50px;
-		height: 87%;
+		height: 85%;
 		position: relative;
+		padding: 2.25em;
 
-		span {
+		.error {
 			color: red;
 			font-size: 12px;
 			height: 25px;
@@ -47,16 +46,17 @@
 		label {
 			color: $blue-med;
 			font-weight: 700;
-			font-size: 20px;
+			font-size: 19px;
 			text-align: left;
-			margin: 0;
+			margin-bottom: 4px;
 		}
 
 		input {
-			margin-bottom: 0.5em;
+			margin-bottom: 0.75em;
 			width: 100%;
-			font-size: 16px;
+			font-size: 14px;
 			padding: 10px;
+			height: 2.25em;
 			border: 1px solid $grey-med;
 			border-radius: 3px;
 			color: $grey-med;
@@ -68,22 +68,19 @@
 			}
 		}
 
-		input[type='submit'] {
+		.login-submit {
 			background-color: $green-med;
 			border: 1px solid $green-med;
 			text-transform: uppercase;
 			color: white;
 			font-weight: 700;
-			font-size: 20px;
-			padding: 10px 15px;
+			font-size: 15px;
+			padding: 0.5em 2em;
 			border-radius: 3px;
 			width: 150px;
-			position: absolute;
-			display: block;
-			right: 0;
-			bottom: 0;
-			margin-right: 2.5em;
-			margin-bottom: 1.25em;
+			
+			margin: 0 auto;
+			float: right;
 
 			&:hover {
 				background-color: $green-med2;
@@ -94,28 +91,7 @@
 	}
 }
 
-button {
-	background-color: rgb(46, 213, 243);
-	border: 1px solid rgb(46, 213, 243);
-	text-transform: uppercase;
-	color: white;
-	font-weight: 700;
-	font-size: 15px;
-	border: 1px solid $green-med;;
-	width: 150px;
-	margin: 0 auto;
-	padding: 1px;
-
-	&:hover {
-		background-color: $green-med2;
-		border-color: $green-med2;
-		cursor: pointer;
-	}
-}
-
 .redirect {
-	border: none;
-	background: none;
 	color: $blue-med;
 	font-size: 0.60em;
 	display: block;
@@ -124,11 +100,20 @@ button {
 	text-transform: none;
 	text-align: left;
 
+	&-btn {
+		border: none;
+		background: none;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
 }
 
 .login-landing-page {
 	padding: 4rem 0;
-	width: 60%;
+	width: 40%;
 	display: flex;
 	flex-direction: column;
 
