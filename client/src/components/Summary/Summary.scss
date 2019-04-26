@@ -1,0 +1,16 @@
+@import './../../variables.scss';
+
+.summary-container {
+    background: $white;
+    height: 100%;
+    // width: 40%;
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.summary-title {
+    color: $green-med;
+    text-transform: uppercase;
+    text-align: center;
+}
