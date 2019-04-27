@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import AppList from './Components/AppList';
-import Login from './Components/Login';
-import Header from './Components/Header';
+import AppList from './components/AppList';
+import Login from './components/Login';
+import Header from './components/Header';
 
 export default function App() {
   const [auth, setAuth] = useState(false);
