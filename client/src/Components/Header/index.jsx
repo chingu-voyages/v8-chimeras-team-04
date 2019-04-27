@@ -8,8 +8,4 @@ export default function Header({ setAuth }) {
 			<h1>Job Tracker</h1>
 		</header>
 	);
-
-	function handleClick() {
-		setAuth(false);
-	}
 }
