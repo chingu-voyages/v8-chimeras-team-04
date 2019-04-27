@@ -13,5 +13,5 @@ module.exports = app => {
   app.post('/login', requireLogIn, logInUser);
   app.post('/signup', signUpUser);
   app.post('/addjob', addNewJob);
-  app.get('/jobs', getAllJobs);
+  app.post('/jobs', getAllJobs);
 };
