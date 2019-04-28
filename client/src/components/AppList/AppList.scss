@@ -3,8 +3,8 @@
 .appList-container {
     background-color: $grey-light;
     height: 100%;
-    // width: 60%;
-    flex-grow: 2;
+    min-width: 70%;
+    // flex-grow: 2;
     padding: 20px;
     text-align: right;
     overflow: auto;
