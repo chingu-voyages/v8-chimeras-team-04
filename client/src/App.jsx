@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-import AppList from './components/AppList/AppList.jsx';
+
 import FullView from './components/FullView/FullView.jsx';
-import Login from './components/Login/';
-import Header from './components/Header/';
 import Summary from './components/Summary/Summary.jsx';
+import AppList from './components/AppList';
+import Login from './components/Login';
+import Header from './components/Header';
 
 export default function App() {
-	const [auth, setAuth] = useState(false);
-	const [currentUser, setCurrentUser] = useState('');
+  const [auth, setAuth] = useState(false);
+  const [currentUser, setCurrentUser] = useState('');
 
 	return (
 		<div>

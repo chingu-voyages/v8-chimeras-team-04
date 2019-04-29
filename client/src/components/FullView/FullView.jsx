@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import AppList from '../AppList/AppList.jsx';
+import AppList from '../AppList';
 import Summary from '../Summary/Summary.jsx';
 
 import './FullView.scss';

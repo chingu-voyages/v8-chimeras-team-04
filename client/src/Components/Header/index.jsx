@@ -2,11 +2,10 @@ import React from 'react';
 
 import './header.scss';
 
-export default function Header({ currentUser }) {
+export default function Header({ setAuth }) {
 	return (
 		<header>
-			<h1 className="header">Job Tracker</h1>
-			<h1>{currentUser}</h1>
+			<h1>Job Tracker</h1>
 		</header>
 	);
 }

@@ -1,31 +1,45 @@
 @import './../../variables.scss';
 
 .login {
-	background-color: $grey-light;
+	height: 100%;
+	background-color: white;
 	color: $blue-med;
-	text-transform: uppercase;
 	padding: 15px 0px;
 	font-size: 24px;
-	height: 15%;
+	border-radius: 3px;
+
 
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	justify-content: space-around;
+	flex-direction: row;
 	position: relative;
 
 	padding: 25px;
-
-	height: 85%;
+	&-forms {
+		background: $grey-light;
+		margin: auto 0;
+		height: 84%;
+		width: 36%;
+		border-radius: 3px;
+		overflow: hidden;
+	}
+	&-forms-heading {
+		text-align: center;
+		background: $blue-med;
+		height: 16%;
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.5em;
+		padding: 22px;
+	}
 
 	form {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		text-align: right;
+		border: 2px solid $blue-med;
+		height: 84%;
+		position: relative;
+		padding: 2.25em;
 
-		span {
+		.error {
 			color: red;
 			font-size: 12px;
 			height: 25px;
@@ -35,15 +49,17 @@
 		label {
 			color: $blue-med;
 			font-weight: 700;
-			font-size: 20px;
+			font-size: 19px;
 			text-align: left;
+			margin-bottom: 4px;
 		}
 
 		input {
+			margin-bottom: 0.75em;
 			width: 100%;
-			font-size: 16px;
+			font-size: 14px;
 			padding: 10px;
-			margin: 10px 0px 20px 0px;
+			height: 2.25em;
 			border: 1px solid $grey-med;
 			border-radius: 3px;
 			color: $grey-med;
@@ -61,37 +77,75 @@
 			text-transform: uppercase;
 			color: white;
 			font-weight: 700;
-			font-size: 20px;
-			padding: 10px 15px;
+			font-size: 15px;
+			padding: 0.5em 2em;
 			border-radius: 3px;
 			width: 150px;
-			margin: 0 auto;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			
+			margin-right: 3.75em;
+			margin-bottom: 3.75em;
 
-			// &:hover {
-			// 	background-color: $green-med2;
-			// 	border-color: $green-med2;
-			// 	cursor: pointer;
-			// }
+			&:hover {
+				background-color: $green-med2;
+				border-color: $green-med2;
+				cursor: pointer;
+			}
 		}
 	}
 }
 
-.login-submit {
-	background-color: rgb(46, 213, 243);
-	border: 1px solid rgb(46, 213, 243);
-	text-transform: uppercase;
-	color: white;
-	font-weight: 700;
-	font-size: 15px;
-	// padding: 10px 15px;
-	// border-radius: 3px;
-	width: 150px;
-	margin: 0 auto;
-	border-radius: 100px;
+.redirect {
+	color: $blue-med;
+	font-size: 0.60em;
+	display: block;
+	width: 100%;
+	font-weight: 100;
+	text-transform: none;
+	text-align: left;
 
-	&:hover {
-		background-color: $green-med2;
-		border-color: $green-med2;
-		cursor: pointer;
+	&-btn {
+		border: none;
+		background: none;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
+
+}
+
+.login-landing-page {
+	padding: 4rem 0;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+	&-main {
+		width: 10em;
+		margin: 0.5em auto;
+	}
+
+	&-sub {
+		display: flex;
+		width: 70%;
+		margin: auto;
+		font-size: 0.75em;
+		color: $grey-med;
+		text-align: center;
+
+		.icon {
+			color: $blue-med;
+			font-size: 2em;
+			margin: auto;
+		}
+
+		p {
+			padding-top: 1em;
+			padding-left: 0.5em;
+		}
+	}
+
 }

@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
+import jobHunt from '../../img/job_hunt.svg';
 import './login.scss';
 
 export default function Login({ auth, setAuth, setCurrentUser }) {
@@ -7,37 +13,73 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 	const [password, setPassword] = useState('');
 	const [passwordConfirm, setPasswordConfirm] = useState('');
 	const [error, setError] = useState('');
-	const [login, setLogin] = useState('signup');
+	const [login, setLogin] = useState('login');
 
 	return (
 		<div className="login">
-			<div className="login-btns">
-				{login === 'signup' && <button className="login-btn" onClick={handleClick('login')}>Sign up</button>}
-				{login === 'login' && <button className="login-btn" onClick={handleClick('signup')}>Log in</button>}
+
+			<div className="login-landing-page">
+				<img src={jobHunt} className="login-landing-page-main" />
+				<div className="login-landing-page-sub">
+					<FontAwesomeIcon className="icon" icon={faCheck} />
+					<p>Create a FREE account to easily keep track of your job applications.</p>
+				</div>
+				<div className="login-landing-page-sub">
+					<FontAwesomeIcon className="icon" icon={faCheck} />
+					<p>Track your rate of success at each stage in the process to identify areas to focus to imporve success.</p>
+				</div>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor="username">Username: </label>
-				<input
-					type="text"
-					name="username"
-					value={username}
-					onChange={e => setUsername(e.target.value)}
-					autoComplete={false}
-				/>
-				<label htmlFor="password">Password: </label>
-				<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-				{login === 'signup' && <label htmlFor="confirm">Confirm Password: </label>}
-				{login === 'signup' && (
+
+
+			<div className="login-forms">
+
+				<h3 className="login-forms-heading">
+					{
+						login === 'login' ? "Log In" : "Sign Up"
+					}
+				</h3>
+
+				<form onSubmit={handleSubmit}>
+					<label htmlFor="username">Username </label>
 					<input
-						type="password"
-						name="confirm"
-						value={passwordConfirm}
-						onChange={e => setPasswordConfirm(e.target.value)}
+						type="text"
+						name="username"
+						value={username}
+						onChange={e => setUsername(e.target.value)}
+						autoComplete={false}
 					/>
-				)}
-				<span>{error}</span>
-				<input type="submit" value="Submit" className="login-submit" />
-			</form>
+					<label htmlFor="password">Password </label>
+					<input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+					{login === 'signup' && <label htmlFor="confirm">Confirm Password </label>}
+					{login === 'signup' && (
+						<input
+							type="password"
+							name="confirm"
+							value={passwordConfirm}
+							onChange={e => setPasswordConfirm(e.target.value)}
+						/>
+					)}
+					
+					<span className="error">{error}</span>
+					{
+						login === 'login' ? 
+						<div className="redirect">
+							Don't have an account? Sign up
+							<span className="redirect-btn" onClick={handleClick('signup')}>
+								 <strong> here</strong>
+							</span>
+						</div>
+						:
+						<div className="redirect">Already have an account? Sign in
+							<span className="redirect-btn" onClick={handleClick('login')}>
+								<strong> here</strong>
+							</span>
+						</div>
+					}
+					<br/>
+					<input type="submit" value="Submit" className="login-submit" />
+				</form>
+			</div>
 		</div>
 	);
 
