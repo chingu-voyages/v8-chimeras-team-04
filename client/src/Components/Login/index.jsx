@@ -34,6 +34,7 @@ export default function Login() {
         <h3 className="login-forms-heading">{login === 'login' ? 'Log In' : 'Sign Up'}</h3>
 
         <form onSubmit={handleSubmit}>
+          <div className="inputs">
           <label htmlFor="username">Username </label>
           <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
           <label htmlFor="password">Password </label>
@@ -48,7 +49,7 @@ export default function Login() {
             />
           )}
 
-          <span className="error">{error}</span>
+          <div className="error">{error}</div>
           {login === 'login' ? (
             <div className="redirect">
               Don't have an account? Sign up
@@ -65,6 +66,7 @@ export default function Login() {
             </div>
           )}
           <br />
+          </div>
           <input type="submit" value="Submit" className="login-submit" />
         </form>
       </div>
