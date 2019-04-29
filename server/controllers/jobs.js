@@ -1,8 +1,8 @@
-const jwt = require('jwt-simple');
 const JobModel = require('../models/job');
+const UserModel = require('../models/user');
 
 const addNewJob = (req, res, next) => {
-  const { position, company } = req.body;
+  const { position, company, username } = req.body;
   let error = '';
 
   if (!position || !company) {
@@ -13,24 +13,26 @@ const addNewJob = (req, res, next) => {
     return res.send({ error });
   }
 
-  const newJob = new JobModel({
-    position,
-    company,
-  });
+  UserModel.findOne({ username }, (err, user) => {
+    const newJob = new JobModel({
+      position,
+      company,
+      seeker: user.id,
+    });
 
-  newJob.save(saveError => {
-    if (saveError) {
-      return next(saveError);
-    }
-    JobModel.find({}).then(data => {
-      res.send(data);
+    newJob.save(saveError => {
+      JobModel.find({ seeker: user.id }).exec((err, apps) => {
+        res.send(apps);
+      });
     });
   });
 };
 
 const getAllJobs = (req, res, next) => {
-  JobModel.find({}).then(data => {
-    res.send(data);
+  const { currentUser } = req.body;
+
+  JobModel.find({ seeker: currentUser.id }).exec((err, apps) => {
+    res.send(apps);
   });
 };
 

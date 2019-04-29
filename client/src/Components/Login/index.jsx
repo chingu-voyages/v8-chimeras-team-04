@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -7,9 +7,10 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import jobHunt from '../../img/job_hunt.svg';
 import './login.scss';
+import FullAppContext from '../../context/FullAppContext';
 
-export default function Login({ auth, setAuth, setCurrentUser }) {
-	const [username, setUsername] = useState('');
+export default function Login() {
+  const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [passwordConfirm, setPasswordConfirm] = useState('');
 	const [error, setError] = useState('');
@@ -83,24 +84,23 @@ export default function Login({ auth, setAuth, setCurrentUser }) {
 		</div>
 	);
 
-	function handleSubmit(e) {
-		e.preventDefault();
-		const url = login === 'signup' ? '/signup' : '/login';
+  function handleSubmit(e) {
+    e.preventDefault();
+    const url = login === 'signup' ? '/signup' : '/login';
+    axios.post(url, { username, password, passwordConfirm }).then(({ data }) => {
+      if (data.error) {
+        setError(data.error);
+        setAuth(false);
+        console.log('error');
+      } else {
+        setError('');
+        setCurrentUser(data.newUser);
+        setAuth(true);
+      }
+    });
+  }
 
-		axios.post(url, { username, password, passwordConfirm }).then(({ data }) => {
-			if (data.error) {
-				setError(data.error);
-				setAuth(false);
-			} else {
-				setError('');
-				setAuth(true);
-				console.log(data);
-				setCurrentUser(data.newUser.username);
-			}
-		});
-	}
-
-	function handleClick(login) {
-		return () => setLogin(login);
-	}
+  function handleClick(login) {
+    return () => setLogin(login);
+  }
 }
