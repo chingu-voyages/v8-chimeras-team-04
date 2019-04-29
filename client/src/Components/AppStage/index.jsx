@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Stage from './Stage.jsx';
-import './AppStage.scss';
+import './appstage.scss';
 
 export default function AppStage() {
   const [submit, toggleSubmit] = useState(true);
