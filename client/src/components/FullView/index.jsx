@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import AppList from '../AppList';
-import Summary from '../Summary/Summary.jsx';
+import Summary from '../Summary';
 
-import './FullView.scss';
+import './fullview.scss';
 
 
 export default function FullView() {

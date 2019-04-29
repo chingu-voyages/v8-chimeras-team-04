@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import './Summary.scss';
-import codeImg from '../img/dev_activity.svg';
+import './summary.scss';
+import codeImg from '../../img/dev_activity.svg';
 
 export default function Summary() {
 
@@ -13,7 +13,7 @@ export default function Summary() {
                     <p>stats will go here</p>
                 </div>
                 <div className='dev-img-container'>
-                    <img src={codeImg} className="dev-img"></img>
+                    <img src={codeImg} className="dev-img" alt="dev img"></img>
                 </div>
             </div>
         </div>
