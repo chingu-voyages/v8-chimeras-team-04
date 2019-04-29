@@ -22,9 +22,11 @@ export default function AppStage() {
 
   return (
     <ul>
-      {stages.map(stage => (
-        <Stage name={stage.name} status={stage.status} toggle={stage.toggle} stageState={stage.stageState} />
-      ))}
+      {stages.map(stage => {
+        const { name, status, toggle, stageState } = stage;
+
+        return <Stage key={name} name={name} status={status} toggle={toggle} stageState={stageState} />;
+      })}
     </ul>
   );
 }

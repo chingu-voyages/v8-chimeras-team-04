@@ -11,15 +11,14 @@ const tokenForUser = user => {
 
 const logInUser = (req, res) => {
   const { username } = req.body;
-  let updatedUser;
 
   UserModel.findOne({ username })
     .then(_updatedUser => {
-      updatedUser = _updatedUser;
+      const { id, username } = _updatedUser;
 
       return res.send({
-        newUser: updatedUser,
-        token: tokenForUser(updatedUser),
+        newUser: { id, username },
+        token: tokenForUser(_updatedUser),
       });
     })
     .catch(err => {

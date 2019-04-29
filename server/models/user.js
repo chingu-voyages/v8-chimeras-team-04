@@ -1,14 +1,15 @@
 const bcrypt = require('bcrypt-nodejs');
 const mongoose = require('mongoose');
 
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   password: String,
-  username: {type: String, lowercase: true, unique: true},
+  username: { type: String, lowercase: true, unique: true },
+  apps: [{ type: Schema.Types.ObjectId, ref: 'Job' }],
 });
 
-UserSchema.pre('save', function (next) {
+UserSchema.pre('save', function(next) {
   const user = this;
 
   bcrypt.genSalt(10, (saltError, salt) => {
@@ -27,7 +28,7 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-UserSchema.methods.validatePassword = function (candidatePassword, callback) {
+UserSchema.methods.validatePassword = function(candidatePassword, callback) {
   const user = this;
 
   bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {

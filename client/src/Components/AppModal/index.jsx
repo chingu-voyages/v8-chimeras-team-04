@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import Modal from 'react-modal';
+import AppContext from '../../context/AppContext';
+import FullAppContext from '../../context/FullAppContext';
 
 import './appmodal.scss';
 
-export default function AppModal({ toggleAppModal, appModal, setApps }) {
+export default function AppModal() {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
-  const [jobError, setJobError] = useState('');
+  const { toggleAppModal, appModal, setApps } = useContext(AppContext);
+  const { currentUser } = useContext(FullAppContext);
 
+  useEffect(() => {
+    Modal.setAppElement('body');
+  });
   return (
     <div>
       <Modal isOpen={appModal} contentLabel="New App Modal">
@@ -54,11 +60,10 @@ export default function AppModal({ toggleAppModal, appModal, setApps }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios.post('/addjob', { position, company }).then(({ data }) => {
+    axios.post('/addjob', { position, company, username: currentUser.username }).then(({ data }) => {
       if (data.error) {
-        setJobError(data.error);
+        console.log('add job error');
       } else {
-        setJobError('');
         toggleAppModal(false);
         setPosition('');
         setCompany('');
