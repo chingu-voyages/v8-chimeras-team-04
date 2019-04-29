@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { getAllJobs } from '../../helpers/DBHelper';
+import React, { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
 
 import AppListing from '../AppListing';
 import AppModal from '../AppModal';
 import AppContext from '../../context/AppContext';
+import FullAppContext from '../../context/FullAppContext';
 
-import './AppList.scss';
+import './applist.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
   const [apps, setApps] = useState([]);
+  const { currentUser } = useContext(FullAppContext);
 
   useEffect(() => {
     fetchJobApps();
@@ -24,11 +26,9 @@ export default function AppList() {
         </button>
         <div className="app-listing-display">
         {apps.map(app => {
-          const { position, company, id } = app;
-          console.log(app);
-          return (
-            <AppListing key={id} position={position} company={company} />
-          );
+          const { position, company, _id } = app;
+
+          return <AppListing key={_id} position={position} company={company} />;
         })}
         </div>
         <AppModal />
@@ -37,6 +37,6 @@ export default function AppList() {
   );
 
   function fetchJobApps() {
-    getAllJobs().then(({ data }) => setApps(data));
+    axios.post('/jobs', { currentUser }).then(data => setApps(data.data));
   }
 }
