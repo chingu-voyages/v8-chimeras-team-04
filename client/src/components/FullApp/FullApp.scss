@@ -1,6 +1,19 @@
 @import './../../variables.scss';
 
-
+@media only screen and (max-width: 700px) {
+    .app-expanded {
+        flex-direction: column;
+    }
+    .app-status-list {
+        flex: 1;
+    }
+    .app-notes {
+        flex: 1;
+    }
+    .app-status-list {
+        width: 100%;
+    }
+}
 
 .app-expanded {
     display: flex;

@@ -1,5 +1,40 @@
 @import './../../variables.scss';
 
+@media only screen and (max-width: 700px) {
+  .header {
+    font-size: 22px;
+    align-self: center !important;
+    flex: 4;
+  }
+
+  .username {
+    flex: 1;
+    font-size: 15px;
+    align-self: center;
+    font-weight: 600;
+  }
+  .logout-btn {
+    flex: 1.5;
+    font-size: 13px !important;
+    padding: 0em !important;
+    margin-left: 0.5em !important;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1083px) {
+  .header {
+    font-size: 30px;
+    flex: 3;
+  }
+  .username {
+    flex: 1;
+    align-self: center;
+  }
+  .logout-btn {
+    flex: 1;
+  }
+}
+
 header {
   display: flex;
   font-size: 20px;

@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header>
       <h1 className="header">Job Tracker</h1>
-      {currentUser && <h1>{currentUser.username}</h1>}
+      {currentUser && <p className="username">{currentUser.username}</p>}
       {auth && (
         <button className="logout-btn" onClick={handleClick}>
           Log out

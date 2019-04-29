@@ -20,10 +20,12 @@ export default function AppList() {
   return (
     <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
       <div className="appList-container">
-        <h1 className="appList-title">Applications</h1>
-        <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
-          + Add App
-        </button>
+        <div className="appList-header">
+          <h1 className="appList-title">Applications</h1>
+          <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
+            + Add App
+          </button>
+        </div>
         {apps.map(app => {
           const { position, company, _id } = app;
 
