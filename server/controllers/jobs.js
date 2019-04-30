@@ -49,6 +49,29 @@ const removeJob = (req, res, next) => {
   });
 }
 
+const updateJob = (req, res, next) => {
+  const { _id, position, company } = req.body;
+  let error = '';
+  if (!_id) {
+    error = 'job app id required.';
+  }
+  if (error) {
+    return res.send({ error });
+  }
+
+  JobModel.findByIdAndUpdate(_id, { position, company }).exec((err, apps)=> {
+    if (apps !== null) {
+      JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
+        res.send(apps);
+      });
+    } else {
+      res.status(400).send();
+    }
+  });
+}
+
+
+
 const getAllJobs = (req, res, next) => {
   const { currentUser } = req.body;
 
@@ -60,5 +83,6 @@ const getAllJobs = (req, res, next) => {
 module.exports = {
   addNewJob,
   getAllJobs,
-  removeJob
+  removeJob,
+  updateJob
 };
