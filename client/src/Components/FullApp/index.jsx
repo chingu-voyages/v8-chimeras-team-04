@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
-import AppStage from '../AppStage/index';
-import FullAppContext from '../../context/FullAppContext';
+import React from 'react';
+
+import AppStage from '../AppStage';
 import './fullapp.scss';
 
-export default function FullApp() {
-  const { fullView } = useContext(FullAppContext);
-
+export default function FullApp({ fullView, id, stage }) {
   return (
     <div className={fullView ? 'app-expanded' : 'app-expanded-hidden'}>
       <div className="app-status-list">
-        <AppStage />
+        <AppStage id={id} stage={stage} />
       </div>
 
       <div className="app-notes">

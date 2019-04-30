@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import axios from 'axios';
 
 import Stage from './Stage.jsx';
+import AppContext from '../../context/AppContext';
 import './appstage.scss';
 
-export default function AppStage() {
-  const [submit, toggleSubmit] = useState(true);
-  const [code, toggleCode] = useState(false);
-  const [screen, toggleScreen] = useState(false);
-  const [ivw1, toggleIvw1] = useState(false);
-  const [ivw2, toggleIvw2] = useState(false);
-  const [offer, toggleOffer] = useState(false);
-
+export default function AppStage({ id, stage }) {
+  const { setApps } = useContext(AppContext);
   const stages = [
-    { name: 'App Submitted', status: true, stageState: submit, toggle: toggleSubmit },
-    { name: 'Code Challenge', status: false, stageState: code, toggle: toggleCode },
-    { name: 'Screening', status: false, stageState: screen, toggle: toggleScreen },
-    { name: 'Interview 1', status: false, stageState: ivw1, toggle: toggleIvw1 },
-    { name: 'Interview 2', status: false, stageState: ivw2, toggle: toggleIvw2 },
-    { name: 'Offer', status: false, stageState: offer, toggle: toggleOffer },
+    { name: 'App Submitted', status: stage === 'submitted' },
+    { name: 'Code Challenge', status: stage === 'challenge' },
+    { name: 'Phone Interview', status: stage === 'phone' },
+    { name: 'Onsite', status: stage === 'onsite' },
+    { name: 'Offer', status: stage === 'offer' },
   ];
 
   return (
     <ul>
       {stages.map(stage => {
-        const { name, status, toggle, stageState } = stage;
+        const { name, status } = stage;
 
-        return <Stage key={name} name={name} status={status} toggle={toggle} stageState={stageState} />;
+        return <Stage key={name} name={name} status={status} handleStage={handleStage} />;
       })}
     </ul>
   );
+
+  function handleStage(name) {
+    axios.post('/stage', { id, name }).then(({ data }) => {
+      setApps(data);
+    });
+  }
 }
