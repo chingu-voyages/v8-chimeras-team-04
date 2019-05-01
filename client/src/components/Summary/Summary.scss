@@ -1,0 +1,29 @@
+@import './../../variables.scss';
+
+
+.dev-img {
+width: 100%;
+padding: 10px;
+}
+
+.summary-container {
+    background: $white;
+    height: 100%;
+    max-width: 30%;
+    padding: 20px;
+    
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    margin-top: 50px;
+}
+
+.summary-title {
+    color: $green-med;
+    text-transform: uppercase;
+    text-align: center;
+}

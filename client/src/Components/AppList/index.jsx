@@ -24,11 +24,13 @@ export default function AppList() {
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
           + Add App
         </button>
+        <div className="app-listing-display">
         {apps.map(app => {
           const { position, company, _id } = app;
 
           return <AppListing key={_id} position={position} company={company} />;
         })}
+        </div>
         <AppModal />
       </div>
     </AppContext.Provider>
