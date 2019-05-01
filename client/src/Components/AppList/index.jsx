@@ -25,11 +25,11 @@ export default function AppList() {
           + Add App
         </button>
         <div className="app-listing-display">
-        {apps.map(app => {
-          const { position, company, _id, stage } = app;
+          {apps.map(app => {
+            const { position, company, _id, stage, notes } = app;
 
-          return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} />;
-        })}
+            return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} />;
+          })}
         </div>
         <AppModal />
       </div>
