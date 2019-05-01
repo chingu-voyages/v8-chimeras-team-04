@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 
 import FullView from './components/FullView';
-import Summary from './components/Summary';
-import AppList from './components/AppList';
 import Login from './components/Login';
 import Header from './components/Header';
 import FullAppContext from './context/FullAppContext';
