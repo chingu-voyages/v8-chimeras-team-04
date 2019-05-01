@@ -11,8 +11,8 @@
 .app-listing-display {
   display: flex;
   flex-direction: column-reverse;
-  overflow: auto;
-  height: 80%;
+  overflow: scroll;
+  max-height: 80%;
   padding-bottom: 20px;
 }
 
