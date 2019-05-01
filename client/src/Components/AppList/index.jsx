@@ -10,8 +10,7 @@ import './AppList.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
-  const [apps, setApps] = useState([]);
-  const { currentUser } = useContext(FullAppContext);
+  const { currentUser, apps, setApps } = useContext(FullAppContext);
   const inputRef = useRef();
 
   useEffect(() => {
