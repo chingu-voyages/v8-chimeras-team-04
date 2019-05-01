@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './summary.scss';
 import codeImg from '../../img/dev_activity.svg';
