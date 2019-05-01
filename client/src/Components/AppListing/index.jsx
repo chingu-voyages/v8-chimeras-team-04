@@ -3,7 +3,7 @@ import FullAppContext from '../../context/FullAppContext';
 import AppContext from '../../context/AppContext';
 
 import FullApp from '../FullApp';
-import './applisting.scss';
+import './AppListing.scss';
 
 export default function AppListing(props) {
   const [fullView, setFullView] = useState(false);
