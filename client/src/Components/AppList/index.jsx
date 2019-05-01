@@ -27,7 +27,7 @@ export default function AppList() {
         {apps.map(app => {
           const { position, company, _id } = app;
 
-          return <AppListing key={_id} _id = {_id} position={position} company={company} />;
+          return <AppListing key={_id} _id = {_id} position={position} company={company} modifyJob={modifyJob} />;
         })}
         <AppModal />
       </div>
@@ -40,5 +40,9 @@ export default function AppList() {
 
   function deleteJob(_id) {
     axios.delete('/removeJob',{data: { _id }}).then(data => setApps(data.data));
+  }
+
+  function modifyJob(app) {
+    axios.put('/updateJob',app).then(data => setApps(data.data));
   }
 }
