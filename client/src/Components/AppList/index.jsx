@@ -6,7 +6,7 @@ import AppModal from '../AppModal';
 import AppContext from '../../context/AppContext';
 import FullAppContext from '../../context/FullAppContext';
 
-import './applist.scss';
+import './AppList.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
@@ -18,7 +18,7 @@ export default function AppList() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
+    <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob }}>
       <div className="appList-container">
         <h1 className="appList-title">Applications</h1>
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
@@ -27,7 +27,7 @@ export default function AppList() {
         {apps.map(app => {
           const { position, company, _id } = app;
 
-          return <AppListing key={_id} position={position} company={company} />;
+          return <AppListing key={_id} _id = {_id} position={position} company={company} />;
         })}
         <AppModal />
       </div>
@@ -36,5 +36,9 @@ export default function AppList() {
 
   function fetchJobApps() {
     axios.post('/jobs', { currentUser }).then(data => setApps(data.data));
+  }
+
+  function deleteJob(_id) {
+    axios.delete('/removeJob', { _id }).then(data => setApps(data.data));
   }
 }

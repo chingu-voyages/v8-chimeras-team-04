@@ -30,6 +30,7 @@ const addNewJob = (req, res, next) => {
 
 const removeJob = (req, res, next) => {
   const { _id } = req.body;
+  console.log('id',_id);
   let error = '';
   if (!_id) {
     error = 'job app id required.';
@@ -41,6 +42,7 @@ const removeJob = (req, res, next) => {
   JobModel.findByIdAndDelete({ _id }).exec((err, apps)=> {
     if (apps !== null) {
       JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
+        console.log('apps:', apps)
         res.send(apps);
       });
     } else {

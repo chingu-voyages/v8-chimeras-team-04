@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppStage from '../AppStage/index';
 import FullAppContext from '../../context/FullAppContext';
-import './fullapp.scss';
+import './FullApp.scss';
 
 export default function FullApp() {
   const { fullView } = useContext(FullAppContext);
