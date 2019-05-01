@@ -6,7 +6,7 @@ import AppModal from '../AppModal';
 import AppContext from '../../context/AppContext';
 import FullAppContext from '../../context/FullAppContext';
 
-import './applist.scss';
+import './AppList.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
