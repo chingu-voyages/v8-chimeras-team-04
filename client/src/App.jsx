@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import AppList from './components/AppList';
+
+import FullView from './components/FullView';
 import Login from './components/Login';
 import Header from './components/Header';
 import FullAppContext from './context/FullAppContext';
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <FullAppContext.Provider value={{ currentUser, setCurrentUser, setAuth, auth }}>
       <Header />
-      <div className="full-app">{auth ? <AppList /> : <Login />}</div>
+      <div className="full-app">{auth ? <FullView /> : <Login />}</div>
     </FullAppContext.Provider>
   );
 }

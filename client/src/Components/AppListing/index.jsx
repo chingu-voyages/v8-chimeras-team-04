@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import FullApp from '../FullApp';
-import './applisting.scss';
+import './AppListing.scss';
 
 export default function AppListing({ id, position, company, stage }) {
   const [fullView, setFullView] = useState(false);
