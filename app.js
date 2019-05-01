@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const router = require('./server/router');
 const app = express();
-app.use(bodyParser.json()); //sets up bodyParser as middleware
 
 const mongoUri =
   process.env.MONGO_URI || 'mongodb+srv://chingu:chingu@job-app-cluster-krb6h.mongodb.net/test?retryWrites=true';
@@ -25,7 +25,7 @@ mongoose.set('debug', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'client/build')));
 router(app);
 
 const PORT = process.env.PORT || 5000;

@@ -17,6 +17,7 @@ const addNewJob = (req, res, next) => {
     const newJob = new JobModel({
       position,
       company,
+      stage: 'submitted',
       seeker: user.id,
     });
 
@@ -80,9 +81,31 @@ const getAllJobs = (req, res, next) => {
   });
 };
 
+const updateStage = (req, res, next) => {
+  const { id, name } = req.body;
+  let stage;
+  if (name === 'App Submitted') stage = 'submitted';
+  if (name === 'Code Challenge') stage = 'challenge';
+  if (name === 'Phone Interview') stage = 'phone';
+  if (name === 'Offer') stage = 'offer';
+  if (name === 'Onsite') stage = 'onsite';
+
+  if (name)
+    JobModel.findByIdAndUpdate(id, { stage }).exec((err, apps) => {
+      if (apps !== null) {
+        JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
+          res.send(apps);
+        });
+      } else {
+        res.status(400).send();
+      }
+    });
+};
+
 module.exports = {
   addNewJob,
   getAllJobs,
   removeJob,
-  updateJob
+  updateJob,
+  updateStage
 };

@@ -1,7 +1,7 @@
 const passport = require('passport');
 const { jwtLogin, localLogin } = require('./services/passport');
 const { logInUser, signUpUser } = require('./controllers/users');
-const { addNewJob, getAllJobs, removeJob, updateJob } = require('./controllers/jobs');
+const { addNewJob, getAllJobs, removeJob, updateJob, updateStage } = require('./controllers/jobs');
 
 passport.use(jwtLogin);
 passport.use(localLogin);
@@ -16,4 +16,5 @@ module.exports = app => {
   app.post('/jobs', getAllJobs);
   app.delete('/removeJob', removeJob);
   app.put('/updateJob', updateJob);
+  app.post('/stage', updateStage);
 };

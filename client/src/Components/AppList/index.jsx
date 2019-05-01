@@ -18,17 +18,19 @@ export default function AppList() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob }}>
+    <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob, modifyJob }}>
       <div className="appList-container">
         <h1 className="appList-title">Applications</h1>
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
           + Add App
         </button>
+        <div className="app-listing-display">
         {apps.map(app => {
-          const { position, company, _id } = app;
+          const { position, company, _id, stage } = app;
 
-          return <AppListing key={_id} _id = {_id} position={position} company={company} modifyJob={modifyJob} />;
+          return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} modifyJob={modifyJob} />;
         })}
+        </div>
         <AppModal />
       </div>
     </AppContext.Provider>
