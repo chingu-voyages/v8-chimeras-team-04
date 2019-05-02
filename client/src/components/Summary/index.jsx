@@ -15,19 +15,38 @@ export default function Summary() {
 
   return (
     <div className="summary-container">
-      <h1 className="summary-title">Summary</h1>
-      <div className="summary-content">
-        <div>
-          <p className="summary-stats">Submitted: {submitted}</p>
-          <p className="summary-stats">Code Challenges: {challenges}</p>
-          <p className="summary-stats">Phone Interviews: {phones}</p>
-          <p className="summary-stats">Onsites: {onsites}</p>
-          <p className="summary-stats">Offers: {offers}</p>
-        </div>
-        <div className="dev-img-container">
-          <img src={codeImg} className="dev-img" alt="dev img" />
+      <div className="summary">
+        <h1>Summary</h1>
+        <div className="summary-stats">
+          <div className="summary-row">
+            <p className="summary-title">Submitted</p>
+            <p className="summary-count">{submitted}</p>
+            <p className="summary-percentage" />
+          </div>
+
+          <div className="summary-row">
+            <p className="summary-title">Code Challenges</p>
+            <p className="summary-count">{challenges}</p>
+            <p className="summary-percentage">{Math.floor((challenges / submitted) * 100)}%</p>
+          </div>
+          <div className="summary-row">
+            <p className="summary-title">Phone Interviews</p>
+            <p className="summary-count">{phones}</p>
+            <p className="summary-percentage">{Math.floor((phones / submitted) * 100)}%</p>
+          </div>
+          <div className="summary-row">
+            <p className="summary-title">Onsites</p>
+            <p className="summary-count">{onsites}</p>
+            <p className="summary-percentage">{Math.floor((onsites / submitted) * 100)}%</p>
+          </div>
+          <div className="summary-row">
+            <p className="summary-title">Offers</p>
+            <p className="summary-count">{offers}</p>
+            <p className="summary-percentage">{Math.floor((offers / submitted) * 100)}%</p>
+          </div>
         </div>
       </div>
+      <img src={codeImg} className="dev-img" alt="dev img" />
     </div>
   );
 }
