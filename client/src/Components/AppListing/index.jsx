@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FullApp from '../FullApp';
 import './AppListing.scss';
 
-export default function AppListing({ id, position, company, stage }) {
+export default function AppListing({ id, position, company, stage, notes }) {
   const [fullView, setFullView] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ export default function AppListing({ id, position, company, stage }) {
           {fullView ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />}
         </button>
       </div>
-      <FullApp fullView={fullView} id={id} stage={stage} />
+      <FullApp fullView={fullView} id={id} stage={stage} notes={notes} />
     </div>
   );
 }

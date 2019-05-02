@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import axios from 'axios';
 
 import AppListing from '../AppListing';
@@ -6,16 +6,20 @@ import AppModal from '../AppModal';
 import AppContext from '../../context/AppContext';
 import FullAppContext from '../../context/FullAppContext';
 
-import './applist.scss';
+import './AppList.scss';
 
 export default function AppList() {
   const [appModal, toggleAppModal] = useState(false);
-  const [apps, setApps] = useState([]);
-  const { currentUser } = useContext(FullAppContext);
+  const { currentUser, apps, setApps } = useContext(FullAppContext);
+  const inputRef = useRef();
 
   useEffect(() => {
     fetchJobApps();
   }, []);
+
+  useEffect(() => {
+    inputRef.current.scrollTo(0, 0);
+  });
 
   return (
     <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
@@ -24,12 +28,12 @@ export default function AppList() {
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
           + Add App
         </button>
-        <div className="app-listing-display">
-        {apps.map(app => {
-          const { position, company, _id, stage } = app;
+        <div ref={inputRef} className="app-listing-display">
+          {apps.map(app => {
+            const { position, company, _id, stage, notes } = app;
 
-          return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} />;
-        })}
+            return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} />;
+          })}
         </div>
         <AppModal />
       </div>

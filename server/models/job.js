@@ -7,6 +7,7 @@ const JobSchema = new Schema({
   company: String,
   seeker: { type: Schema.Types.ObjectId, ref: 'Person' },
   stage: String,
+  notes: String,
 });
 
 module.exports = mongoose.model('job', JobSchema);
