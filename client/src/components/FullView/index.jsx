@@ -3,7 +3,7 @@ import React from 'react';
 import AppList from '../AppList';
 import Summary from '../Summary';
 
-import './fullview.scss';
+import './FullView.scss';
 
 
 export default function FullView() {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AppStage from '../AppStage';
-import './fullapp.scss';
+import './FullApp.scss';
 
 export default function FullApp({ fullView, id, stage }) {
   return (
@@ -14,7 +14,7 @@ export default function FullApp({ fullView, id, stage }) {
         <h3 className="app-notes-title">notes:</h3>
         
         <p className="app-notes-content">
-          {note}
+          xyz
         </p>
 
       <form>
@@ -23,8 +23,8 @@ export default function FullApp({ fullView, id, stage }) {
                 name="app-notes"
                 placeholder="Application Notes ..."
                 className="form-notes-before"
-                value={note}
-                onChange={e => setNotes(e.target.value)}
+                value="xyz"
+                
               />
             <button type="submit" >SAVE</button>
       </form>

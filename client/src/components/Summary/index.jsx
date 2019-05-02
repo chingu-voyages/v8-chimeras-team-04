@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './summary.scss';
+import './Summary.scss';
 import codeImg from '../../img/dev_activity.svg';
 
 export default function Summary() {

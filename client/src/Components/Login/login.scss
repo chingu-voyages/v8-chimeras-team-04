@@ -15,6 +15,13 @@
 	position: relative;
 
 	padding: 25px;
+
+	&-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 	&-forms {
 		background: $grey-light;
 		margin: auto 0;
@@ -81,9 +88,9 @@
 			padding: 0.5em 2em;
 			border-radius: 3px;
 			width: 150px;
-			position: absolute;
-			right: 0;
-			bottom: 0;
+			// position: absolute;
+			// right: 0;
+			// bottom: 0;
 			
 			margin-right: 3.75em;
 			margin-bottom: 3.75em;
@@ -147,5 +154,55 @@
 			padding-left: 0.5em;
 		}
 	}
+
+}
+
+@media (max-width: $screen-m) {
+	.login {
+		display: block;
+		overflow: auto;
+		padding: 0;
+
+		.login-forms {
+			width: 100%;
+
+			&-heading {
+				background-color: $grey-light;
+				color: $blue-med;
+				border-top: 2px solid rgba(213, 213, 213, 0.2);
+				border-bottom: 2px solid rgba(213, 213, 213, 0.2);
+				font-size: 24px;
+				padding: 16px;
+				height: 64px;
+			}
+			
+			form {
+				border: 0px;
+				max-width: 500px;
+				margin: auto;
+				padding: 1.75em;
+			}
+			
+		}
+	}
+	
+	.login-landing-page {
+		width: 100%;
+		padding: 40px 0;
+
+		&-sub .icon {
+			font-size: 1.5em;
+		}
+
+		&-main {
+			width: 7em;
+		}
+
+		p {
+			font-size: 14px;
+		}
+	}
+
+
 
 }

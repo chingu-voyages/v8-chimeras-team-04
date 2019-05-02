@@ -37,3 +37,17 @@ header {
     }
   }
 }
+
+@media (max-width: $screen-m) {
+  header {
+    display: block;
+    padding: 15px;
+    text-align: center;
+
+    h1 {
+      font-size: 1.75em;
+    }
+    
+    
+  }
+}
