@@ -30,10 +30,20 @@ export default function AppList() {
         </button>
         <div ref={inputRef} className="app-listing-display">
           {apps.map(app => {
-            const { position, company, _id, stage, notes } = app;
-
-          return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} modifyJob={modifyJob} />;
-        })}
+            const { position, company, _id, stage, notes, dates } = app;
+            return (
+              <AppListing
+                key={_id}
+                dates={dates}
+                id={_id}
+                position={position}
+                company={company}
+                stage={stage}
+                notes={notes}
+                modifyJob={modifyJob}
+              />
+            );
+          })}
         </div>
         <AppModal />
       </div>
@@ -45,10 +55,10 @@ export default function AppList() {
   }
 
   function deleteJob(_id) {
-    axios.delete('/removeJob',{data: { _id }}).then(data => setApps(data.data));
+    axios.delete('/removeJob', { data: { _id } }).then(data => setApps(data.data));
   }
 
   function modifyJob(app) {
-    axios.put('/updateJob',app).then(data => setApps(data.data));
+    axios.put('/updateJob', app).then(data => setApps(data.data));
   }
 }
