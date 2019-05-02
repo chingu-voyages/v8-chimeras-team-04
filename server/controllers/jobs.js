@@ -2,7 +2,7 @@ const JobModel = require('../models/job');
 const UserModel = require('../models/user');
 
 const addNewJob = (req, res, next) => {
-  const { position, company, username } = req.body;
+  const { position, company, username, notes } = req.body;
   let error = '';
 
   if (!position || !company) {
@@ -19,6 +19,7 @@ const addNewJob = (req, res, next) => {
       company,
       stage: 'submitted',
       seeker: user.id,
+      notes,
     });
 
     newJob.save(saveError => {
