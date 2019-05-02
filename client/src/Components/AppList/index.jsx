@@ -22,7 +22,7 @@ export default function AppList() {
   });
 
   return (
-    <AppContext.Provider value={{ toggleAppModal, appModal, setApps }}>
+    <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob, modifyJob }}>
       <div className="appList-container">
         <h1 className="appList-title">Applications</h1>
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
@@ -32,8 +32,8 @@ export default function AppList() {
           {apps.map(app => {
             const { position, company, _id, stage, notes } = app;
 
-            return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} />;
-          })}
+          return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} modifyJob={modifyJob} />;
+        })}
         </div>
         <AppModal />
       </div>
@@ -42,5 +42,13 @@ export default function AppList() {
 
   function fetchJobApps() {
     axios.post('/jobs', { currentUser }).then(data => setApps(data.data));
+  }
+
+  function deleteJob(_id) {
+    axios.delete('/removeJob',{data: { _id }}).then(data => setApps(data.data));
+  }
+
+  function modifyJob(app) {
+    axios.put('/updateJob',app).then(data => setApps(data.data));
   }
 }
