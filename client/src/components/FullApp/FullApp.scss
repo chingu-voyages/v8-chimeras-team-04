@@ -16,16 +16,10 @@
 }
 
 .app-notes {
-    // flex-grow: 1;
     max-width: 400px;
-    // border-left: 1px dashed rgba(205, 204, 204, 0.53);
-    
-    // padding-left: 25px;
 
     &-title {
-        // text-transform: uppercase;
         color: $blue-med-op;
-        // font-weight: 400;
         line-height: 1.75;
         font-size: 22px;
     }

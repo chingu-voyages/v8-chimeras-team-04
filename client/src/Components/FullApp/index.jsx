@@ -1,22 +1,20 @@
-import React, { useContext } from 'react';
-import AppStage from '../AppStage/index';
+import React, { useState, useContext } from 'react';
 import FullAppContext from '../../context/FullAppContext';
-import './fullapp.scss';
+import './FullApp.scss';
 
-export default function FullApp() {
-  const { fullView } = useContext(FullAppContext);
+import AppStage from '../AppStage';
 
+export default function FullApp({ fullView, id, stage, notes }) {
   return (
     <div className={fullView ? 'app-expanded' : 'app-expanded-hidden'}>
       <div className="app-status-list">
-        <AppStage />
+        <AppStage id={id} stage={stage} />
       </div>
 
       <div className="app-notes">
         <h3 className="app-notes-title">notes:</h3>
-        <p className="app-notes-content">
-          This is where the notes would go if we decided to include this in our app. Doesn't it look nice?
-        </p>
+
+        <p className="app-notes-content">{notes}</p>
       </div>
     </div>
   );

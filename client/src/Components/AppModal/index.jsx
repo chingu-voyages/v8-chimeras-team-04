@@ -4,11 +4,12 @@ import Modal from 'react-modal';
 import AppContext from '../../context/AppContext';
 import FullAppContext from '../../context/FullAppContext';
 
-import './appmodal.scss';
+import './AppModal.scss';
 
 export default function AppModal() {
   const [position, setPosition] = useState('');
   const [company, setCompany] = useState('');
+  const [notes, setNotes] = useState('');
   const { toggleAppModal, appModal, setApps } = useContext(AppContext);
   const { currentUser } = useContext(FullAppContext);
 
@@ -45,6 +46,15 @@ export default function AppModal() {
                 value={company}
                 onChange={e => setCompany(e.target.value)}
               />
+              <label>Notes</label>
+              <textarea
+                type="text"
+                name="notes-name"
+                placeholder="notes Name"
+                className="form-input"
+                value={notes}
+                onChange={e => setNotes(e.target.value)}
+              />
             </div>
             <div className="modal-button">
               <button onClick={handleSubmit} type="submit">
@@ -60,13 +70,14 @@ export default function AppModal() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios.post('/addjob', { position, company, username: currentUser.username }).then(({ data }) => {
+    axios.post('/addjob', { position, company, username: currentUser.username, notes }).then(({ data }) => {
       if (data.error) {
         console.log('add job error');
       } else {
         toggleAppModal(false);
         setPosition('');
         setCompany('');
+        setNotes('');
         setApps(data);
       }
     });

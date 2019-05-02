@@ -1,0 +1,28 @@
+.position,
+.company {
+  display: inline-block;
+}
+
+.position {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3f3bfc;
+  width: 40%;
+  
+}
+
+.company {
+  font-size: 18px;
+  padding: 3px 0;
+  font-weight: 400;
+  color: #706565;
+}
+
+.editable__form {
+    width: 40%;
+    font-size: 18px;
+}
+
+.editable__form.position {
+    font-size: 22px; 
+}
