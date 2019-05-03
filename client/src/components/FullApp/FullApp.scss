@@ -16,7 +16,7 @@
 }
 
 .app-notes {
-    max-width: 400px;
+    width: 50%;
 
     &-title {
         color: $blue-med-op;
@@ -28,4 +28,30 @@
         color: $grey-med2;
         font-size: 12px;
     }
+}
+
+@media (max-width: $screen-s) {
+    
+    .app-notes {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: $screen-xs) {
+    .app-expanded {
+        display: block;
+        // padding: 15px;
+    
+    }
+
+    .app-notes {
+        width: 100%;
+
+        &-title {
+            font-size: 16px;
+            
+        }
+    }
+
 }

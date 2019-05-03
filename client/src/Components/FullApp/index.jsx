@@ -14,7 +14,7 @@ export default function FullApp({ fullView, id, stage }) {
         <h3 className="app-notes-title">notes:</h3>
         
         <p className="app-notes-content">
-          xyz
+          placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
         </p>
 
       <form>

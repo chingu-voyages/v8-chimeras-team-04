@@ -9,7 +9,7 @@ padding: 10px;
 .summary-container {
     background: $white;
     height: 100%;
-    max-width: 30%;
+    width: 30%;
     padding: 20px;
     
 }
@@ -26,4 +26,32 @@ padding: 10px;
     color: $green-med;
     text-transform: uppercase;
     text-align: center;
+}
+
+@media (max-width: $screen-m) {
+    .dev-img-container {
+        width: 250px;
+        margin: 0 auto;
+        }
+    
+    .summary-container {
+        width: 100%;
+        height: 300px;
+        display: block;
+    }
+
+    .summary-content {
+        display: block;
+        
+        // flex-direction: column;
+        // justify-content: space-between;
+        // height: 85%;
+        // margin-top: 50px;
+    }
+}
+
+@media (max-width: $screen-s) {
+    .summary-title {
+        font-size: 24px;
+    }
 }

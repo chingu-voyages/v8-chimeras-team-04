@@ -37,3 +37,26 @@
         cursor: pointer;
     }
 }
+
+
+@media (max-width: $screen-s) {
+    .appList-title {
+        font-size: 24px;
+    }
+
+    // .appList-btn-add {
+    //     font-size: 16px;
+    //     padding: 5px 10px;
+    //     margin: 10px 0px 15px 0px;
+    // }
+  }
+
+  @media (max-width: $screen-xs) {
+    
+
+    .appList-btn-add {
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 10px 0px 15px 0px;
+    }
+  }
