@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 
-import Stage from './Stage.jsx';
+import Stage from './Stage.jsx.js';
 import AppContext from '../../context/AppContext';
 import './AppStage.scss';
 
