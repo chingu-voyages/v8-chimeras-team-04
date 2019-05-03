@@ -1,9 +1,10 @@
-import React from 'react';
-
-import AppStage from '../AppStage';
+import React, { useState, useContext } from 'react';
+import FullAppContext from '../../context/FullAppContext';
 import './FullApp.scss';
 
-export default function FullApp({ fullView, id, stage }) {
+import AppStage from '../AppStage';
+
+export default function FullApp({ fullView, id, stage, notes }) {
   return (
     <div className={fullView ? 'app-expanded' : 'app-expanded-hidden'}>
       <div className="app-status-list">
@@ -12,23 +13,8 @@ export default function FullApp({ fullView, id, stage }) {
 
       <div className="app-notes">
         <h3 className="app-notes-title">notes:</h3>
-        
-        <p className="app-notes-content">
-          placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
-        </p>
 
-      <form>
-              <textarea
-                
-                name="app-notes"
-                placeholder="Application Notes ..."
-                className="form-notes-before"
-                value="xyz"
-                
-              />
-            <button type="submit" >SAVE</button>
-      </form>
-
+        <p className="app-notes-content">{notes}</p>
       </div>
     </div>
   );
