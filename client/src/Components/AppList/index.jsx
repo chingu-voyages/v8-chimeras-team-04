@@ -38,11 +38,11 @@ export default function AppList() {
           <button className="dropbtn" onClick={() => setIsVisible(true)}>{currentStage === 'submitted' ? 'All' : currentStage}<span><FontAwesomeIcon className="dropIcon" icon={faCaretDown}/></span></button>
           {isVisible &&
             <div className="dropdown-content">
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('submitted'); setIsVisible(false)}}>All</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('challenge'); setIsVisible(false)}}>challenge</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('phone'); setIsVisible(false)}}>phone</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('onsite'); setIsVisible(false)}}>onsite</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('offer'); setIsVisible(false)}}>offer</button>
+              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('submitted'); setIsVisible(!isVisible)}}>All</button>
+              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('challenge'); setIsVisible(!isVisible)}}>challenge</button>
+              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('phone'); setIsVisible(!isVisible)}}>phone</button>
+              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('onsite'); setIsVisible(!isVisible)}}>onsite</button>
+              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('offer'); setIsVisible(!isVisible)}}>offer</button>
             </div>
           }
         </div>
