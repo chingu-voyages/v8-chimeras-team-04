@@ -46,7 +46,9 @@ export default function Summary() {
           </div>
         </div>
       </div>
+      <div className='dev-img-container'>
       <img src={codeImg} className="dev-img" alt="dev img" />
+      </div>
     </div>
   );
 }
