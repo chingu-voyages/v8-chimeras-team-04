@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import AppContext from '../../context/AppContext';
 import FullAppContext from '../../context/FullAppContext';
 
-import './appmodal.scss';
+import './AppModal.scss';
 
 export default function AppModal() {
   const [position, setPosition] = useState('');

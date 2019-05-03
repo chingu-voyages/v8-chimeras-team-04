@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import FullAppContext from '../../context/FullAppContext';
+import './FullApp.scss';
 
 import AppStage from '../AppStage';
-import './fullapp.scss';
 
 export default function FullApp({ fullView, id, stage, notes }) {
   return (

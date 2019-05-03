@@ -1,0 +1,62 @@
+@import './../../variables.scss';
+
+.dev-img {
+  width: 100%;
+  padding: 10px;
+}
+
+.summary-container {
+  background: $white;
+  height: 100%;
+  max-width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .summary {
+    color: $green-med;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .summary-stats {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    color: darkgray;
+    margin-top: 20px;
+  }
+
+  .summary-row {
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+  }
+
+  .summary-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    width: 180px;
+    text-align: left;
+  }
+
+  .summary-percentage,
+  .summary-count {
+    width: 50px;
+  }
+
+  .summary-count {
+    color: #3f3bfc;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .summary-percentage {
+    font-weight: bold;
+  }
+}

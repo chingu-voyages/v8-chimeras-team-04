@@ -3,7 +3,8 @@ import axios from 'axios';
 
 import Stage from './Stage.jsx';
 import AppContext from '../../context/AppContext';
-import './appstage.scss';
+
+import './AppStage.scss';
 
 export default function AppStage({ id, stage }) {
   const { setApps } = useContext(AppContext);

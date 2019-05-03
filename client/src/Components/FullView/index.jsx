@@ -5,6 +5,7 @@ import Summary from '../Summary';
 
 import './FullView.scss';
 
+
 export default function FullView() {
   return (
     <div className="app-full-view">
