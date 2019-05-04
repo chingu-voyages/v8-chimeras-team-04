@@ -15,9 +15,10 @@ export default function Login() {
   const [error, setError] = useState("");
   const [login, setLogin] = useState("login");
   const { setCurrentUser, setAuth } = useContext(FullAppContext);
-
+  
   return (
     <div className="login">
+    
       <div className="login-landing-page">
         <img src={jobHunt} className="login-landing-page-main" alt="landing" />
         <div className="login-landing-page-sub">

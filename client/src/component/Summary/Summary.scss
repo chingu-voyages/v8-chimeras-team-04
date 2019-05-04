@@ -117,4 +117,11 @@ padding: 10px;
     .summary-container {
         display: none;
     }
+
+    .show-sum {
+        display: block;
+        z-index: 100;
+        position: absolute;
+
+    }
 }
