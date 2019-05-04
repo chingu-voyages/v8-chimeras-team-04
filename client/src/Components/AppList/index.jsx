@@ -31,20 +31,24 @@ export default function AppList() {
     <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob, modifyJob }}>
       <div className="appList-container">
         <h1 className="appList-title">Applications</h1>
-        <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
-          + Add App
-        </button>
-        <div className="dropdown">
-          <button className="dropbtn" onClick={() => setIsVisible(true)}>{currentStage === 'submitted' ? 'All' : currentStage}<span><FontAwesomeIcon className="dropIcon" icon={faCaretDown}/></span></button>
-          {isVisible &&
-            <div className="dropdown-content">
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('submitted'); setIsVisible(!isVisible)}}>All</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('challenge'); setIsVisible(!isVisible)}}>challenge</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('phone'); setIsVisible(!isVisible)}}>phone</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('onsite'); setIsVisible(!isVisible)}}>onsite</button>
-              <button className="dropdown-content-btn" onClick={() => {setCurrentStage('offer'); setIsVisible(!isVisible)}}>offer</button>
-            </div>
-          }
+        <div className="appList-buttons">
+          <div className="blank-space"></div>
+          <div className="filter-heading"><p>Filter By: </p></div>
+          <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
+            + Add App
+          </button>
+          <div className="dropdown">
+            <button className="dropbtn" onClick={() => setIsVisible(true)}>{currentStage === 'submitted' ? 'All' : currentStage}<span><FontAwesomeIcon className="dropIcon" icon={faCaretDown}/></span></button>
+            {isVisible &&
+              <div className="dropdown-content">
+                <button className="dropdown-content-btn" onClick={() => {setCurrentStage('submitted'); setIsVisible(!isVisible)}}>All</button>
+                <button className="dropdown-content-btn" onClick={() => {setCurrentStage('challenge'); setIsVisible(!isVisible)}}>challenge</button>
+                <button className="dropdown-content-btn" onClick={() => {setCurrentStage('phone'); setIsVisible(!isVisible)}}>phone</button>
+                <button className="dropdown-content-btn" onClick={() => {setCurrentStage('onsite'); setIsVisible(!isVisible)}}>onsite</button>
+                <button className="dropdown-content-btn" onClick={() => {setCurrentStage('offer'); setIsVisible(!isVisible)}}>offer</button>
+              </div>
+            }
+          </div>
         </div>
         <div ref={inputRef} className="app-listing-display">
           {
