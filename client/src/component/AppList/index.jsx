@@ -35,6 +35,7 @@ export default function AppList() {
           return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} modifyJob={modifyJob} />;
         })}
         </div>
+        <div className="summary-btn-mobile"></div>
         <AppModal />
       </div>
     </AppContext.Provider>

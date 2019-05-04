@@ -48,12 +48,20 @@ header {
     h1 {
       font-size: 1.75em;
     }
+
+    .logout-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 14px;
+      border: 2px solid white;
+    }
     
     
   }
 }
 
-@media (max-width: $screen-m) {
+@media (max-width: $screen-s) {
   header {
     // display: block;
     // padding: 15px;
@@ -82,8 +90,8 @@ header {
       font-size: 1.25em;
     }
     
-    .username {
-      font-size: 12px;
+    .username, .user {
+      display: none;
     }
 
     .logout-btn {

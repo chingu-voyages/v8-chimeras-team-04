@@ -86,7 +86,9 @@ export default function Login() {
             )}
             <br />
           </div>
+          <div className="submit-button">
           <input type="submit" value="Submit" className="login-submit" />
+          </div>
         </form>
       </div>
     </div>
