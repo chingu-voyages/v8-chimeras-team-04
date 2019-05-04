@@ -31,7 +31,7 @@ export default function Login() {
           <FontAwesomeIcon className="icon" icon={faCheck} />
           <p>
             Track your rate of success at each stage in the process to identify
-            areas to focus to imporve success.
+            areas to focus to improve success.
           </p>
         </div>
       </div>
