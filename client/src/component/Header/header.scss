@@ -18,7 +18,11 @@ header {
 		font-size: 20px;
 		display: inline-block;
 		padding-left: 10px;
-	}
+  }
+  
+  .logout-label {
+    padding-left: 5px;
+  }
 
   .logout-btn {
     background-color: $green-med;
@@ -56,6 +60,10 @@ header {
       font-size: 14px;
       border: 2px solid white;
     }
+
+    .username, .user {
+      display: none;
+    }
     
     
   }
@@ -63,19 +71,9 @@ header {
 
 @media (max-width: $screen-s) {
   header {
-    // display: block;
-    // padding: 15px;
-    // text-align: center;
-    
-    // .username {
-    //   font-size: 12px;
-    // }
-
-    // .logout-btn {
-    //   font-size: 16px;
-    //   padding: 5px 10px;
-    //   border: 2px solid white;
-    // }
+    .logout-label {
+      display: none;
+    }
     
   }
 }
@@ -90,15 +88,12 @@ header {
       font-size: 1.25em;
     }
     
-    .username, .user {
-      display: none;
-    }
 
     .logout-btn {
       font-size: 16px;
       padding: 5px 10px;
       border: 2px solid white;
     }
-    
+
   }
 }

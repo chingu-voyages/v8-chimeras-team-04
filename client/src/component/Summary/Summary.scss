@@ -95,6 +95,8 @@ padding: 10px;
             // max-width: 300px;
             margin: 30px auto;
         }
+
+    
     }
 
     .summary-content {
@@ -110,5 +112,9 @@ padding: 10px;
 @media (max-width: $screen-s) {
     .summary-title {
         font-size: 24px;
+    }
+
+    .summary-container {
+        display: none;
     }
 }
