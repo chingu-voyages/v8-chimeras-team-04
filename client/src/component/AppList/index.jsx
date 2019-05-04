@@ -23,7 +23,9 @@ export default function AppList() {
 
   return (
     <AppContext.Provider value={{ toggleAppModal, appModal, setApps, deleteJob, modifyJob }}>
-      <div className="appList-container">
+    
+    <div className="appList-container">
+      
         <h1 className="appList-title">Applications</h1>
         <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
           + Add App
@@ -35,6 +37,7 @@ export default function AppList() {
           return <AppListing key={_id} id={_id} position={position} company={company} stage={stage} notes={notes} modifyJob={modifyJob} />;
         })}
         </div>
+        
         <AppModal />
       </div>
     </AppContext.Provider>

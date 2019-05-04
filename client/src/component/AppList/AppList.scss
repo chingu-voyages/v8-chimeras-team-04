@@ -34,8 +34,37 @@
   margin: 15px 0px 25px 0px;
   text-align: right;
 
-  &:hover {
-    background-color: $blue-dark;
-    cursor: pointer;
-  }
+    &:hover {
+        background-color: $blue-dark;
+        cursor: pointer;
+    }
 }
+
+.summary-btn-mobile, .apps-btn-mobile {
+    display: none;
+}
+
+
+@media (max-width: $screen-s) {
+    .appList-title {
+        font-size: 24px;
+    }
+
+    .appList-container {
+        position: relative;
+
+        button.appList-btn-add {
+            margin-top: 20px;
+        }
+    }
+  }
+
+  @media (max-width: $screen-xs) {
+    
+
+    .appList-btn-add {
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 10px 0px 15px 0px;
+    }
+  }

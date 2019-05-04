@@ -1,0 +1,52 @@
+@import "./../../variables.scss";
+
+.app-full-view {
+  display: flex;
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+@media (max-width: $screen-m) {
+  .app-full-view {
+    display: block;
+    overflow: auto;
+  }
+}
+
+@media (max-width: $screen-m) {
+  .summary-btn-mobile {
+    background-color: white;
+    &:hover {
+      color: $green-med2;
+      cursor: pointer;
+    }
+  }
+
+  .apps-btn-mobile {
+    background-color: $grey-light;
+    &:hover {
+      color: $blue-med;
+      cursor: pointer;
+    }
+  }
+
+  .summary-btn-mobile,
+  .apps-btn-mobile {
+    color: $grey-med;
+    min-height: 5%;
+    width: 50%;
+
+    font-size: 16px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+
+    i {
+      font-size: 12px;
+      padding-right: 5px;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import './Summary.scss';
 import codeImg from '../../img/dev_activity.svg';
 import FullAppContext from '../../context/FullAppContext';
 
-export default function Summary() {
+export default function Summary(props) {
   const { apps } = useContext(FullAppContext);
 
   const submitted = apps.length;
@@ -14,7 +14,7 @@ export default function Summary() {
   const offers = apps.filter(el => el.stage === 'offer').length;
 
   return (
-    <div className="summary-container">
+    <div className={props.mobileView}>
       <div className="summary">
         <h1>Summary</h1>
         <div className="summary-stats">
@@ -46,7 +46,9 @@ export default function Summary() {
           </div>
         </div>
       </div>
-      <img src={codeImg} className="dev-img" alt="dev img" />
+      <div className='dev-img-container'>
+        <img src={codeImg} className="dev-img" alt="dev img" />
+      </div>
     </div>
   );
 }
