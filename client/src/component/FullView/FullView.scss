@@ -1,40 +1,42 @@
-@import './../../variables.scss';
+@import "./../../variables.scss";
 
 .app-full-view {
-    display: flex;
-    height: 100%;
-    border-radius: 3px;
-    overflow: hidden;
+  display: flex;
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 @media (max-width: $screen-m) {
-    .app-full-view {
-        display: block;
-        overflow: auto;
-
-    }
+  .app-full-view {
+    display: block;
+    overflow: auto;
+  }
 }
 
-@media (max-width: $screen-s) {
-    
-.summary-btn-mobile {
+@media (max-width: $screen-m) {
+  .summary-btn-mobile {
     background-color: white;
-    // color: $green-med2;
-}
+    &:hover {
+      color: $green-med2;
+      cursor: pointer;
+    }
+  }
 
-.apps-btn-mobile {
+  .apps-btn-mobile {
     background-color: $grey-light;
-    // color: $blue-med;
-}
+    &:hover {
+      color: $blue-med;
+      cursor: pointer;
+    }
+  }
 
-.summary-btn-mobile, .apps-btn-mobile {
+  .summary-btn-mobile,
+  .apps-btn-mobile {
     color: $grey-med;
-    height: 30px;
+    min-height: 5%;
     width: 50%;
-    // position: fixed;
-    // bottom: 0;
-    // left: 0;
-    
+
     font-size: 16px;
     padding-top: 5px;
     text-transform: uppercase;
@@ -42,12 +44,9 @@
     text-align: center;
     display: inline-block;
 
-    i{
-        font-size: 12px;
-        padding-right: 5px;
-        
+    i {
+      font-size: 12px;
+      padding-right: 5px;
     }
-
-}
-
+  }
 }

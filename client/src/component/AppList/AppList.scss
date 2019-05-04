@@ -57,45 +57,6 @@
             margin-top: 20px;
         }
     }
-
-    .summary-btn-mobile {
-        background-color: white;
-        color: $green-med2;
-    }
-
-    .apps-btn-mobile {
-        background-color: $grey-light;
-        color: $blue-med;
-    }
-
-    .summary-btn-mobile, .apps-btn-mobile {
-        
-        height: 30px;
-        width: 50%;
-        // position: fixed;
-        // bottom: 0;
-        // left: 0;
-        
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 700;
-        text-align: center;
-        display: inline-block;
-
-        i{
-            font-size: 18px;
-            padding-right: 5px;
-        }
-
-    }
-
-    
-
-    // .appList-btn-add {
-    //     font-size: 16px;
-    //     padding: 5px 10px;
-    //     margin: 10px 0px 15px 0px;
-    // }
   }
 
   @media (max-width: $screen-xs) {

@@ -47,7 +47,7 @@ export default function Summary(props) {
         </div>
       </div>
       <div className='dev-img-container'>
-      <img src={codeImg} className="dev-img" alt="dev img" />
+        <img src={codeImg} className="dev-img" alt="dev img" />
       </div>
     </div>
   );
