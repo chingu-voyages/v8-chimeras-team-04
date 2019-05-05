@@ -1,7 +1,10 @@
+
 import React from 'react';
+
 import './FullApp.scss';
 
 import AppStage from '../AppStage';
+
 
 export default function FullApp({ fullView, id, stage, notes, dates }) {
   return (

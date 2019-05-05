@@ -1,3 +1,4 @@
+
 @import './../../variables.scss';
 
 .modal-heading {
@@ -100,3 +101,46 @@ div.ReactModal__Content.ReactModal__Content--after-open {
 div.ReactModal__Overlay.ReactModal__Overlay--after-open {
   background-color: $blue-med-op !important;
 }
+
+@media (max-width: $screen-m) {
+  div.ReactModal__Content.ReactModal__Content--after-open {
+    top: 50px !important;
+    bottom: 50px !important;
+    left: 50px !important;
+    right: 50px !important;
+  }
+}
+
+@media (max-width: $screen-xs) {
+  div.ReactModal__Content.ReactModal__Content--after-open {
+    top: 50px !important;
+    bottom: 50px !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+
+  .modal-heading {
+    font-size: 16px;
+  }
+
+  .modal-content {
+    padding: 15px;
+
+    button {
+      font-size: 16px;
+      padding: 5px 10px;
+      margin: 10px 0px 15px 0px;
+      width: 100px;
+    }
+
+    form {
+      label,
+      input {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+

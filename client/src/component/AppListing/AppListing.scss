@@ -16,6 +16,26 @@
   padding: 15px;
 }
 
+.position,
+.company {
+  display: inline-block;
+}
+
+.position {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3f3bfc;
+  width: 50%;
+}
+
+.company {
+  font-size: 18px;
+  padding: 3px 0;
+  font-weight: 400;
+  color: #706565;
+}
+
+
 .fa-plus,
 .fa-minus {
   color: $blue-med;
@@ -57,3 +77,28 @@
   background-color: $white;
   border: none;
 }
+
+@media (max-width: $screen-s) {
+  .listing-categories-main {
+    display: block;
+    height: 80px;
+  }
+
+  .position, .company {
+    display: block;
+    width: 90%;
+  }
+}
+
+@media (max-width: $screen-xs) {
+
+  .position, .company {
+    font-size: 95%;
+  }
+
+  .listing-categories-main {
+    height: 70px;
+  }
+}
+
+
