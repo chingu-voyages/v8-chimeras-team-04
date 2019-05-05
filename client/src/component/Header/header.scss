@@ -1,0 +1,97 @@
+@import './../../variables.scss';
+
+header {
+	display: flex;
+	font-size: 20px;
+	justify-content: space-between;
+	color: white;
+	padding: 25px;
+	text-transform: uppercase;
+ 
+	.user {
+		display: inline-block;
+		padding: 0.5em 1em;
+
+	}
+
+	.username {
+		font-size: 20px;
+		display: inline-block;
+		padding-left: 10px;
+  }
+  
+  .logout-label {
+    padding-left: 5px;
+  }
+
+  .logout-btn {
+    background-color: $green-med;
+    border: 3px solid white;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $green-med2;
+      border-color: $green-med2;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $screen-m) {
+  header {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    height: 10vh;
+
+    h1 {
+      font-size: 1.75em;
+    }
+
+    .logout-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 14px;
+      border: 2px solid white;
+    }
+
+    .username, .user {
+      display: none;
+    }
+    
+    
+  }
+}
+
+@media (max-width: $screen-s) {
+  header {
+    .logout-label {
+      display: none;
+    }
+    
+  }
+}
+
+@media (max-width: $screen-xs) {
+  header {
+
+    h1 {
+      font-size: 1.25em;
+    }
+    
+
+    .logout-btn {
+      font-size: 16px;
+      padding: 5px 10px;
+      border: 2px solid white;
+    }
+
+  }
+}
+

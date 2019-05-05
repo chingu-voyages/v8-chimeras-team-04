@@ -1,0 +1,146 @@
+
+@import './../../variables.scss';
+
+.modal-heading {
+  background-color: $grey-light;
+  color: $blue-med;
+  text-transform: uppercase;
+  padding: 15px 0px;
+  font-size: 24px;
+  height: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .modal-close {
+    position: absolute;
+    right: 25px;
+    font-size: 24px;
+    color: $grey-med;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+      color: $grey-med2;
+    }
+  }
+}
+
+.modal-content {
+  padding: 25px;
+
+  height: 85%;
+
+  &-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+  }
+
+  button {
+    background-color: $green-med;
+    border: 1px solid $green-med;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 3px;
+    width: 150px;
+
+    &:hover {
+      background-color: $green-med2;
+      border-color: $green-med2;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    label {
+      color: $blue-med;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+}
+
+.modal-inputs {
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px 0px 20px 0px;
+  border: 1px solid $grey-med;
+  border-radius: 3px;
+  color: $grey-med;
+  font-family: $font-main;
+
+  &:focus {
+    border: 1px solid $blue-med;
+    outline: none;
+  }
+}
+
+div.ReactModal__Content.ReactModal__Content--after-open {
+  padding: 0px !important;
+  top: 100px !important;
+  bottom: 100px !important;
+  left: 20% !important;
+  right: 20% !important;
+  border: none !important;
+  border-radius: 3px !important;
+}
+
+div.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: $blue-med-op !important;
+}
+
+@media (max-width: $screen-m) {
+  div.ReactModal__Content.ReactModal__Content--after-open {
+    top: 50px !important;
+    bottom: 50px !important;
+    left: 50px !important;
+    right: 50px !important;
+  }
+}
+
+@media (max-width: $screen-xs) {
+  div.ReactModal__Content.ReactModal__Content--after-open {
+    top: 50px !important;
+    bottom: 50px !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+
+  .modal-heading {
+    font-size: 16px;
+  }
+
+  .modal-content {
+    padding: 15px;
+
+    button {
+      font-size: 16px;
+      padding: 5px 10px;
+      margin: 10px 0px 15px 0px;
+      width: 100px;
+    }
+
+    form {
+      label,
+      input {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+

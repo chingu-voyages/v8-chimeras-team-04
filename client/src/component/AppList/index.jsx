@@ -80,10 +80,10 @@ export default function AppList() {
   }
 
   function deleteJob(_id) {
-    axios.delete('/removeJob',{data: { _id }}).then(data => setApps(data.data));
+    axios.delete('/removeJob', { data: { _id } }).then(data => setApps(data.data));
   }
 
   function modifyJob(app) {
-    axios.put('/updateJob',app).then(data => setApps(data.data));
+    axios.put('/updateJob', app).then(data => setApps(data.data));
   }
 }
