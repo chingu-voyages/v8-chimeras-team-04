@@ -1,19 +1,18 @@
 @import './../../variables.scss';
 
-
 .dev-img {
-width: 100%;
-padding: 10px;
+  width: 100%;
+  padding: 10px;
 }
 
 .summary-container {
-    background: $white;
-    height: 100%;
-    min-width: 30%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background: $white;
+  height: 100%;
+  max-width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .summary {
     color: $green-med;
@@ -25,10 +24,9 @@ padding: 10px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    max-width: 300px;
+    width: 100%;
     color: darkgray;
-    margin: 70px auto;
-
+    margin-top: 20px;
   }
 
   .summary-row {
@@ -61,56 +59,4 @@ padding: 10px;
   .summary-percentage {
     font-weight: bold;
   }
-
-}
-
-.summary-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 85%;
-    margin-top: 50px;
-}
-
-.summary-title {
-    color: $grey-med;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-@media (max-width: $screen-m) {
-    .dev-img-container {
-        min-width: 250px;
-        max-width: 375px;
-        margin: 0 auto;
-    }
-    
-    .summary-container {
-        width: 100%;
-        display: none;
-
-        .summary-stats {
-            margin: 15% auto 0px auto;
-        }
-    }
-
-    .show-sum {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 100;
-        position: absolute;
-
-    }
-
-    .summary-content {
-        display: block;
-    }
-}
-
-@media (max-width: $screen-s) {
-    .summary-title {
-        font-size: 24px;
-    }
-
 }

@@ -13,8 +13,7 @@ export default function Header() {
       {currentUser && <div className="user"><i className="fas fa-user"/><h3 className="username">{currentUser.username}</h3></div>}
       {auth && (
         <button className="logout-btn" onClick={handleClick}>
-        <i className="fas fa-sign-out-alt"/><span className="logout-label">Log out</span>
-
+          Log out
         </button>
 	  )}
 	  </div>

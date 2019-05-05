@@ -1,6 +1,4 @@
 import React, { useState, useContext } from 'react';
-
-import FullAppContext from '../../context/FullAppContext';
 import AppContext from '../../context/AppContext';
 import EditableName from '../EditableName';
 

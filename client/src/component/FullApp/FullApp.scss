@@ -1,57 +1,36 @@
 @import './../../variables.scss';
 
-
 .app-expanded {
-    display: flex;
-    padding: 15px;
-    box-shadow: inset 0px 0px 10px rgba(232, 231, 231, 0.774);
-    border-top: 1px solid rgba(213, 213, 213, 0.192);
-
+  display: flex;
+  padding: 15px;
+  box-shadow: inset 0px 0px 10px rgba(232, 231, 231, 0.774);
+  border-top: 1px solid rgba(213, 213, 213, 0.192);
 }
 
 .app-expanded-hidden {
-    display: none; 
-    padding-top: 30px;
+  display: none;
+  padding-top: 30px;
 }
 
 .app-notes {
-    width: 50%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    &-title {
-        color: $blue-med-op;
-        line-height: 1.75;
-        font-size: 22px;
-    }
+  &-title {
+    color: $blue-med-op;
+    line-height: 1.75;
+    font-size: 22px;
+  }
 
-    &-content {
-        color: $grey-med2;
-        font-size: 12px;
-    }
+  &-content {
+    color: $grey-med2;
+    font-size: 12px;
+  }
 }
 
-@media (max-width: $screen-s) {
-    
-    .app-notes {
-        width: 50%;
-    }
-
+.dates {
+  font-size: 12px;
+  color: lightgray;
 }
-
-@media (max-width: $screen-xs) {
-    .app-expanded {
-        display: block;
-        // padding: 15px;
-    
-    }
-
-    .app-notes {
-        width: 100%;
-
-        &-title {
-            font-size: 16px;
-            
-        }
-    }
-
-}
-
