@@ -60,13 +60,13 @@
 .filter-heading {
   font-size: 22px;
   padding: 23px 20px;
-  color: rgb(116, 115, 115);
+  color: $grey-med;
 }
 
 .dropbtn {
-  border: 3px solid $blue-med;
+  border: 2px solid $grey-med;
   cursor: pointer;
-  color: black;
+  color: $grey-med;
   padding: 7.5px 15px;
   font-size: 20px;
   font-family: inherit;
@@ -90,14 +90,19 @@
   &-btn {
     float: none;
     display: block;
-    border: 1px solid black;
+    border: 1px solid $grey-med;
     cursor: pointer;
-    color: black;
+    color: $grey-med;
     padding: 10px 15px;
     font-size: 20px;
     font-family: inherit;
     text-transform: lowercase;
     width: 200px;
     text-align: left;
+
+    &:hover {
+      background-color: $blue-med;
+      color: white;
+    }
   }
 }
