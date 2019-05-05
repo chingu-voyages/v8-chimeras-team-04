@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
@@ -22,15 +23,22 @@ export default function Login() {
         <img src={jobHunt} className="login-landing-page-main" alt="landing" />
         <div className="login-landing-page-sub">
           <FontAwesomeIcon className="icon" icon={faCheck} />
-          <p>Create a FREE account to easily keep track of your job applications.</p>
+          <p>
+            Create a FREE account to easily keep track of your job applications.
+          </p>
         </div>
         <div className="login-landing-page-sub">
           <FontAwesomeIcon className="icon" icon={faCheck} />
-          <p>Track your rate of success at each stage in the process to identify areas to focus to imporve success.</p>
+          <p>
+            Track your rate of success at each stage in the process to identify
+            areas to focus to improve success.
+          </p>
+
         </div>
       </div>
 
       <div className="login-forms">
+
         <h3 className="login-forms-heading">{login === 'login' ? 'Log In' : 'Sign Up'}</h3>
 
         <form onSubmit={handleSubmit}>
@@ -65,7 +73,9 @@ export default function Login() {
             </div>
           )}
           <br />
+          <div className="submit-button">
           <input type="submit" value="Submit" className="login-submit" />
+          </div>
         </form>
       </div>
     </div>
