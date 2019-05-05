@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './EditableName.scss';
 
@@ -34,3 +35,4 @@ export default function EditableName(props) {
     setEditable(false);
   }
 }
+
