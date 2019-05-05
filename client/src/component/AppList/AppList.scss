@@ -1,4 +1,4 @@
-@import './../../variables.scss';
+@import "./../../variables.scss";
 
 .appList-container {
   background-color: $grey-light;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column-reverse;
   overflow: scroll;
-  max-height: 80%;
+  height: 75%;
   padding-bottom: 20px;
 }
 
@@ -20,6 +20,7 @@
   color: $blue-med;
   text-transform: uppercase;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .appList-btn-add {
@@ -36,64 +37,68 @@
   // flex: 1;
   order: 3;
 
-    &:hover {
-        background-color: $blue-dark;
-        cursor: pointer;
-    }
+  &:hover {
+    background-color: $blue-dark;
+    cursor: pointer;
+  }
 }
 
-.summary-btn-mobile, .apps-btn-mobile {
-    display: none;
+.summary-btn-mobile,
+.apps-btn-mobile {
+  display: none;
 }
 
 .appList-buttons {
   display: flex;
   justify-content: space-between;
-  
+
   .blank-space {
     flex: 2;
   }
 }
 
 .dropdown {
-  margin: 0 1em;
+  margin: 15px 1em 0px 1em;
   overflow: hidden;
   float: left;
 }
 
 .filter-heading {
   font-size: 22px;
-  padding: 23px 20px;
+  padding: 23px 0px;
   color: $grey-med;
 }
 
 .dropbtn {
-  border: 2px solid $grey-med;
+  border: 2px solid $blue-med;
   cursor: pointer;
   color: $grey-med;
   padding: 7.5px 15px;
   font-size: 20px;
   font-family: inherit;
-  margin-top: 15px;
   text-transform: lowercase;
-  width: 200px;
+  width: 150px;
   text-align: left;
-  background: $grey-light;
+  background: $white;
+  outline: none;
+  border-radius: 3px;
+  height: 45px;
 
   .dropIcon {
     float: right;
     color: $blue-med;
   }
 }
+
 .dropdown-content {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 200px;
+  width: 150px;
   z-index: 1;
 
   &-btn {
-    background: $grey-light;
+    background: $white;
     float: none;
     display: block;
     border: 1px solid $grey-med;
@@ -103,37 +108,51 @@
     font-size: 20px;
     font-family: inherit;
     text-transform: lowercase;
-    width: 200px;
+    width: 150px;
     text-align: left;
+    outline: none;
 
     &:hover {
       background-color: $blue-med;
+      border: 1px solid $blue-med;
       color: white;
     }
   }
 }
 
 @media (max-width: $screen-s) {
-    .appList-title {
-        font-size: 24px;
-    }
+  
+  .appList-container {
+    position: relative;
 
-    .appList-container {
-        position: relative;
-
-        button.appList-btn-add {
-            margin-top: 20px;
-        }
+    button.appList-btn-add {
+      margin-top: 15px;
     }
   }
+}
 
-  @media (max-width: $screen-xs) {
-    
-
-    .appList-btn-add {
-        font-size: 16px;
-        padding: 5px 10px;
-        margin: 10px 0px 15px 0px;
-    }
+@media (max-width: $screen-xs) {
+  .filter-heading {
+    display: none;
   }
 
+  .appList-btn-add {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 10px 0px 15px 0px;
+  }
+
+  .dropbtn {
+    font-size: 14px;
+    width: 100px;
+    padding: 5px;
+    height: 30px;
+  }
+
+  .dropdown-content-btn {
+    font-size: 14px;
+    height: 35px;
+    width: 100px;
+    padding: 5px;
+  }
+}
