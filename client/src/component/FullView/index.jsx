@@ -1,4 +1,6 @@
+
 import React, { useState }  from 'react';
+
 
 import AppList from '../AppList';
 import Summary from '../Summary';
@@ -21,4 +23,5 @@ export default function FullView() {
             <AppList />
         </div>
     )
+
 }

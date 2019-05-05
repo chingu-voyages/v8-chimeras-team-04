@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Stage from './Stage.jsx';
 import AppContext from '../../context/AppContext';
+
 import './AppStages.scss';
 
 export default function AppStage({ id, stage }) {

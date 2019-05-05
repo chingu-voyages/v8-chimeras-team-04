@@ -14,6 +14,7 @@ export default function Header() {
       {auth && (
         <button className="logout-btn" onClick={handleClick}>
         <i className="fas fa-sign-out-alt"/><span className="logout-label">Log out</span>
+
         </button>
 	  )}
 	  </div>

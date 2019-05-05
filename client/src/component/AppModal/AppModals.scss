@@ -1,4 +1,5 @@
-@import "./../../variables.scss";
+
+@import './../../variables.scss';
 
 .modal-heading {
   background-color: $grey-light;
@@ -140,5 +141,6 @@ div.ReactModal__Overlay.ReactModal__Overlay--after-open {
     }
   }
 }
+
 
 

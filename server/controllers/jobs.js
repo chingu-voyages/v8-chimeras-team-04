@@ -20,6 +20,7 @@ const addNewJob = (req, res, next) => {
       stage: 'submitted',
       seeker: user.id,
       notes,
+      dates: new Date(),
     });
 
     newJob.save(saveError => {
@@ -40,7 +41,7 @@ const removeJob = (req, res, next) => {
     return res.send({ error });
   }
 
-  JobModel.findByIdAndDelete({ _id }).exec((err, apps)=> {
+  JobModel.findByIdAndDelete({ _id }).exec((err, apps) => {
     if (apps !== null) {
       JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
         res.send(apps);
@@ -49,7 +50,7 @@ const removeJob = (req, res, next) => {
       res.status(400).send();
     }
   });
-}
+};
 
 const updateJob = (req, res, next) => {
   const { _id, position, company } = req.body;
@@ -61,7 +62,7 @@ const updateJob = (req, res, next) => {
     return res.send({ error });
   }
 
-  JobModel.findByIdAndUpdate(_id, { position, company }).exec((err, apps)=> {
+  JobModel.findByIdAndUpdate(_id, { position, company }).exec((err, apps) => {
     if (apps !== null) {
       JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
         res.send(apps);
@@ -70,9 +71,7 @@ const updateJob = (req, res, next) => {
       res.status(400).send();
     }
   });
-}
-
-
+};
 
 const getAllJobs = (req, res, next) => {
   const { currentUser } = req.body;
@@ -108,5 +107,5 @@ module.exports = {
   getAllJobs,
   removeJob,
   updateJob,
-  updateStage
+  updateStage,
 };
