@@ -33,12 +33,12 @@ export default function AppList() {
         <h1 className="appList-title">Applications</h1>
         <div className="appList-buttons">
           <div className="blank-space"></div>
-          <div className="filter-heading"><p>Filter By: </p></div>
+          <div className="filter-heading"><p>Filter By:</p></div>
           <button onClick={() => toggleAppModal(true)} className="appList-btn-add">
             + Add App
           </button>
           <div className="dropdown">
-            <button className="dropbtn" onClick={() => setIsVisible(true)}>{currentStage === 'submitted' ? 'All' : currentStage}<span><FontAwesomeIcon className="dropIcon" icon={faCaretDown}/></span></button>
+            <button className="dropbtn" onClick={() => setIsVisible(!isVisible)}>{currentStage === 'submitted' ? 'All' : currentStage}<span><FontAwesomeIcon className="dropIcon" icon={faCaretDown}/></span></button>
             {isVisible &&
               <div className="dropdown-content">
                 <button className="dropdown-content-btn" onClick={() => {setCurrentStage('submitted'); setIsVisible(!isVisible)}}>All</button>
@@ -55,17 +55,17 @@ export default function AppList() {
             currentStage !== 'submitted' ?
             apps.filter(app => app.stage === currentStage)
             .map(app => {
-            const { position, company, _id, stage, notes } = app;
+            const { position, company, _id, stage, notes, dates } = app;
             let stageVal = currentStage === 'submitted' ? stage : currentStage;
 
-            return <AppListing key={_id} id={_id} position={position} company={company} stage={stageVal} notes={notes} />;
+            return <AppListing key={_id} id={_id} dates={dates} position={position} company={company} stage={stageVal} notes={notes} />;
           })
           :
             apps.map(app => {
-            const { position, company, _id, stage, notes } = app;
+            const { position, company, _id, stage, notes, dates } = app;
             let stageVal = currentStage === 'submitted' ? stage : currentStage;
 
-            return <AppListing key={_id} id={_id} position={position} company={company} stage={stageVal} notes={notes} />;
+            return <AppListing key={_id} id={_id} dates={dates} position={position} company={company} stage={stageVal} notes={notes} />;
           })
           
           }
@@ -87,3 +87,20 @@ export default function AppList() {
     axios.put('/updateJob', app).then(data => setApps(data.data));
   }
 }
+
+
+// {apps.map(app => {
+//   const { position, company, _id, stage, notes, dates } = app;
+//   return (
+//     <AppListing
+//       key={_id}
+//       dates={dates}
+//       id={_id}
+//       position={position}
+//       company={company}
+//       stage={stage}
+//       notes={notes}
+//       modifyJob={modifyJob}
+//     />
+//   );
+// })}
