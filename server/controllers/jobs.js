@@ -25,7 +25,7 @@ const addNewJob = (req, res, next) => {
 
     newJob.save(saveError => {
       JobModel.find({ seeker: user.id }).exec((err, apps) => {
-        res.send(apps);
+        res.send(apps.reverse());
       });
     });
   });
@@ -44,7 +44,7 @@ const removeJob = (req, res, next) => {
   JobModel.findByIdAndDelete({ _id }).exec((err, apps) => {
     if (apps !== null) {
       JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
-        res.send(apps);
+        res.send(apps.reverse());
       });
     } else {
       res.status(400).send();
@@ -65,7 +65,7 @@ const updateJob = (req, res, next) => {
   JobModel.findByIdAndUpdate(_id, { position, company }).exec((err, apps) => {
     if (apps !== null) {
       JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
-        res.send(apps);
+        res.send(apps.reverse());
       });
     } else {
       res.status(400).send();
@@ -77,7 +77,7 @@ const getAllJobs = (req, res, next) => {
   const { currentUser } = req.body;
 
   JobModel.find({ seeker: currentUser.id }).exec((err, apps) => {
-    res.send(apps);
+    res.send(apps.reverse());
   });
 };
 
@@ -94,7 +94,7 @@ const updateStage = (req, res, next) => {
     JobModel.findByIdAndUpdate(id, { stage }).exec((err, apps) => {
       if (apps !== null) {
         JobModel.find({ seeker: apps.seeker }).exec((err, apps) => {
-          res.send(apps);
+          res.send(apps.reverse());
         });
       } else {
         res.status(400).send();
