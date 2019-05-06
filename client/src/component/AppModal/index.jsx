@@ -32,7 +32,7 @@ export default function AppModal() {
               <input
                 type="text"
                 name="position-position"
-                placeholder="Position position"
+                placeholder="Position"
                 className="form-input"
                 value={position}
                 onChange={e => setPosition(e.target.value)}
@@ -50,7 +50,7 @@ export default function AppModal() {
               <textarea
                 type="text"
                 name="notes-name"
-                placeholder="notes Name"
+                placeholder="Notes"
                 className="form-input"
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
